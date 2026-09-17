@@ -110,7 +110,7 @@
 
       .intro {
         display: grid;
-        grid-template-columns: 1fr 1.2fr 1fr;
+        grid-template-columns: 1fr 2fr;
         gap: 34px;
         padding: 28px 0 clamp(80px, 11vw, 160px);
         border-bottom: 1px solid var(--line);
@@ -123,7 +123,6 @@
         line-height: 1.16;
         letter-spacing: -0.025em;
       }
-      .intro-note { color: var(--muted); font-size: 0.95rem; max-width: 30ch; justify-self: end; }
       .section-label { font-size: 0.72rem; letter-spacing: 0.13em; text-transform: uppercase; }
 
       .gallery { padding: clamp(72px, 9vw, 135px) 0; }
@@ -142,7 +141,6 @@
         line-height: 0.95;
         letter-spacing: -0.05em;
       }
-      .gallery-head p { margin: 0 0 5px; color: var(--muted); max-width: 48ch; }
       .archive-link {
         display: inline-flex;
         align-items: center;
@@ -158,6 +156,7 @@
       }
       .archive-link span { transition: transform 220ms ease; }
       .archive-link:hover span { transform: translateX(5px); }
+      .gallery-head > .archive-link { justify-self: start; margin-top: 0; }
 
       .photo-grid {
         display: grid;
@@ -259,7 +258,6 @@
         .hero img { object-position: 50% 50%; }
         .intro, .gallery-head { grid-template-columns: 1fr; }
         .intro { gap: 24px; }
-        .intro-note { justify-self: start; }
         .gallery-head { gap: 20px; }
         .photo-grid { grid-template-columns: 1fr 1fr; gap: 48px 12px; }
         .photo:nth-child(n) { grid-column: auto; margin-top: 0; }
@@ -294,16 +292,12 @@
         <section class="intro reveal" aria-label="Feature introduction">
           <p class="section-label">A visual notebook</p>
           <p class="intro-copy">Fragments collected across years and distances—architecture, weather, light, and the quiet space between them.</p>
-          <p class="intro-note">A personal archive of fifty photographs, presented here as a visual notebook.</p>
         </section>
 
         <section class="gallery" id="gallery">
           <div class="gallery-head reveal">
             <h2>Selected<br />frames</h2>
-            <div>
-              <p>Seven photographs from the larger archive. Open any frame for a closer look.</p>
-              <a class="archive-link" href="archive/">View all 50 photographs <span aria-hidden="true">→</span></a>
-            </div>
+            <a class="archive-link" href="archive/">View all 50 photographs <span aria-hidden="true">→</span></a>
           </div>
 
           <div class="photo-grid">
