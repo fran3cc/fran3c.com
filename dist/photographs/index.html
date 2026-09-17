@@ -6,7 +6,8 @@
     <meta name="theme-color" content="#f1f0eb" />
     <meta name="description" content="Photographs — a personal archive of fifty images by Frank." />
     <title>Photographs — Frank’s Index</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111111'/%3E%3Cpath d='M15 14h34v8H24v8h20v8H24v12h-9z' fill='%23f1f0eb'/%3E%3Ccircle cx='49' cy='49' r='5' fill='%23e33b2e'/%3E%3C/svg%3E" />
+    <link rel="icon" type="image/png" href="../images/fran3c-avatar.png" />
+    <link rel="apple-touch-icon" href="../images/fran3c-avatar.png" />
     <style>
       :root {
         --paper: #f1f0eb;
@@ -57,7 +58,7 @@
         text-transform: uppercase;
       }
 
-      .brand-mark { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+      .brand-avatar { width: 26px; height: 26px; border-radius: 50%; object-fit: cover; }
       .nav-links { display: flex; gap: 30px; }
       .nav-links a {
         text-decoration: none;
@@ -270,7 +271,7 @@
   <body>
     <div class="page">
       <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="../"><span class="brand-mark" aria-hidden="true"></span>FRAN3C</a>
+        <a class="brand" href="../"><img class="brand-avatar" src="../images/fran3c-avatar.png" alt="" />FRAN3C</a>
         <div class="nav-links">
           <a href="../features/">Experience</a>
           <a href="#top">Photographs</a>

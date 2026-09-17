@@ -6,6 +6,8 @@
     <meta name="theme-color" content="#11110f" />
     <meta name="description" content="An evolving index of experience, projects, photographs, and ongoing work." />
     <title>Index — Frank</title>
+    <link rel="icon" type="image/png" href="images/fran3c-avatar.png" />
+    <link rel="apple-touch-icon" href="images/fran3c-avatar.png" />
     <style>
       :root { --paper:#f1f0eb; --ink:#11110f; --muted:#6b6961; --line:rgba(17,17,15,.2); --accent:#e33b2e; }
       * { box-sizing:border-box; }
@@ -16,7 +18,7 @@
       nav { min-height:68px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); }
       .brand,.nav-link { font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; }
       .brand { display:flex; align-items:center; gap:11px; }
-      .mark { width:10px; height:10px; border-radius:50%; background:var(--accent); }
+      .brand-avatar { width:26px; height:26px; border-radius:50%; object-fit:cover; }
       .nav-links { display:flex; gap:28px; }
       .nav-link:hover { text-decoration:underline; text-underline-offset:5px; }
       header { display:grid; grid-template-columns:1fr 2fr; gap:32px; padding:clamp(50px,8vw,118px) 0 clamp(48px,7vw,100px); }
@@ -39,7 +41,7 @@
   <body>
     <div class="page">
       <nav aria-label="Primary navigation">
-        <a class="brand" href="./"><span class="mark" aria-hidden="true"></span>FRAN3C</a>
+        <a class="brand" href="./"><img class="brand-avatar" src="images/fran3c-avatar.png" alt="" />FRAN3C</a>
         <div class="nav-links"><a class="nav-link" href="features/">Experience</a><a class="nav-link" href="photographs/">Photographs</a><a class="nav-link" href="projects/">Projects</a></div>
       </nav>
       <header>
