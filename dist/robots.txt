@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fran3c.com/sitemap.xml
