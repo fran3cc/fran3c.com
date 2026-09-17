@@ -3,326 +3,411 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0b0b0c" />
-    <meta name="description" content="Sihan Chen — electrical engineer, builder, and photographer." />
-    <title>FRAN3C — Sihan Chen</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0b0c'/%3E%3Cpath d='M13 13h38v9H23v9h22v9H23v13H13z' fill='%23f2f0e9'/%3E%3Ccircle cx='49' cy='50' r='5' fill='%234f72ff'/%3E%3C/svg%3E" />
+    <meta name="theme-color" content="#f1f0eb" />
+    <meta name="description" content="An evolving personal index of photographs, notes, and ongoing work." />
+    <title>Index — Frank's Feature</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111111'/%3E%3Cpath d='M15 14h34v8H24v8h20v8H24v12h-9z' fill='%23f1f0eb'/%3E%3Ccircle cx='49' cy='49' r='5' fill='%23e33b2e'/%3E%3C/svg%3E" />
     <style>
       :root {
-        --black: #0b0b0c;
-        --paper: #f2f0e9;
-        --blue: #4f72ff;
-        --grey: #989994;
-        --line-dark: rgba(255,255,255,.2);
-        --line-light: rgba(11,11,12,.2);
+        --paper: #f1f0eb;
+        --ink: #11110f;
+        --muted: #68675f;
+        --line: rgba(17, 17, 15, 0.2);
+        --accent: #e33b2e;
       }
+
       * { box-sizing: border-box; }
       html { scroll-behavior: smooth; }
       body {
         margin: 0;
-        background: var(--black);
-        color: var(--paper);
+        background: var(--paper);
+        color: var(--ink);
         font-family: Arial, Helvetica, sans-serif;
         font-size: 16px;
         line-height: 1.45;
         -webkit-font-smoothing: antialiased;
       }
-      a { color: inherit; }
+
       img { display: block; width: 100%; }
-      .shell { width: min(100% - 34px, 1520px); margin: 0 auto; }
+      a { color: inherit; }
+      button { font: inherit; }
+
+      .page { width: min(100% - 32px, 1500px); margin: 0 auto; }
       .nav {
         position: sticky;
         top: 0;
         z-index: 20;
         display: flex;
-        align-items: center;
         justify-content: space-between;
+        align-items: center;
         min-height: 68px;
-        border-bottom: 1px solid var(--line-dark);
-        background: color-mix(in srgb, var(--black) 88%, transparent);
-        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--line);
+        background: color-mix(in srgb, var(--paper) 92%, transparent);
+        backdrop-filter: blur(12px);
       }
-      .logo {
+
+      .brand {
         display: inline-flex;
         align-items: center;
-        gap: 10px;
+        gap: 11px;
         text-decoration: none;
-        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-        font-size: .83rem;
+        font-size: 0.84rem;
         font-weight: 700;
-        letter-spacing: .12em;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
       }
-      .logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--blue); }
-      .nav-links { display: flex; gap: 28px; }
+
+      .brand-mark { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+      .nav-links { display: flex; gap: 30px; }
       .nav-links a {
         text-decoration: none;
-        font-size: .76rem;
-        letter-spacing: .1em;
+        font-size: 0.78rem;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
       }
       .nav-links a:hover { text-decoration: underline; text-underline-offset: 5px; }
 
-      .hero { min-height: calc(100vh - 68px); display: grid; align-content: space-between; padding: clamp(55px, 8vw, 112px) 0 24px; }
-      .hero-top { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-      .micro {
-        margin: 0;
-        color: var(--grey);
-        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-        font-size: .76rem;
-        letter-spacing: .08em;
+      .masthead { padding: clamp(42px, 7vw, 108px) 0 26px; }
+      .eyebrow {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 18px;
+        color: var(--muted);
+        font-size: 0.74rem;
+        letter-spacing: 0.13em;
         text-transform: uppercase;
       }
-      .hero-role { max-width: 620px; justify-self: end; }
-      .hero-role p {
-        margin: 0;
-        font-size: clamp(1.35rem, 2.5vw, 2.7rem);
-        line-height: 1.1;
-        letter-spacing: -.035em;
-      }
-      .hero-role .micro { margin-top: 18px; font-size: .72rem; }
-      h1 {
-        margin: clamp(70px, 10vw, 130px) 0 0;
-        font-size: clamp(5rem, 17.8vw, 17rem);
-        font-weight: 700;
-        line-height: .72;
-        letter-spacing: -.085em;
-      }
-      h1 .three { color: var(--blue); }
-      .hero-bottom {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 16px;
-        padding-top: 28px;
-        border-top: 1px solid var(--line-dark);
-      }
-      .hero-bottom p { margin: 0; }
-      .hero-bottom p:nth-child(2) { text-align: center; }
-      .hero-bottom p:last-child { text-align: right; }
 
-      .work {
-        background: var(--paper);
-        color: var(--black);
-        padding: clamp(72px, 9vw, 138px) 0;
-      }
-      .section-head {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 28px;
-        align-items: end;
-        margin-bottom: clamp(46px, 7vw, 92px);
-      }
-      h2 {
+      h1 {
         margin: 0;
         font-family: Georgia, 'Times New Roman', serif;
-        font-size: clamp(3.2rem, 7vw, 7.5rem);
+        font-size: clamp(4.25rem, 13.7vw, 13.5rem);
         font-weight: 400;
-        line-height: .92;
-        letter-spacing: -.055em;
-      }
-      .section-intro { margin: 0 0 7px; max-width: 53ch; color: #62625e; font-size: 1.05rem; }
-      .projects { border-top: 1px solid var(--line-light); }
-      .project {
-        display: grid;
-        grid-template-columns: 70px 1.05fr .9fr 1.4fr;
-        gap: 24px;
-        padding: 27px 0 29px;
-        border-bottom: 1px solid var(--line-light);
-      }
-      .project > * { margin: 0; }
-      .project-index, .project-time {
-        color: #6c6c67;
-        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-        font-size: .75rem;
-        letter-spacing: .06em;
-        text-transform: uppercase;
-      }
-      .project h3 { font-size: clamp(1.25rem, 2vw, 2rem); line-height: 1; letter-spacing: -.025em; }
-      .project p:last-child { color: #50504c; max-width: 50ch; }
-      .full-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        margin-top: 34px;
-        padding-bottom: 6px;
-        border-bottom: 1px solid currentColor;
-        text-decoration: none;
-        font-size: .77rem;
-        font-weight: 700;
-        letter-spacing: .1em;
-        text-transform: uppercase;
+        line-height: 0.78;
+        letter-spacing: -0.07em;
       }
 
-      .photo-feature { padding: clamp(80px, 10vw, 150px) 0; }
-      .photo-feature-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 28px; }
-      .photo-copy { display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; }
-      .photo-copy h2 { margin-top: 28px; }
-      .photo-copy p { color: var(--grey); max-width: 33ch; }
-      .photo-image {
+      .hero {
         position: relative;
-        min-height: 560px;
         overflow: hidden;
-        background: #171719;
+        background: #161616;
+        aspect-ratio: 16 / 9;
       }
-      .photo-image img { height: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.2,.7,.2,1); }
-      .photo-image:hover img { transform: scale(1.015); }
-      .photo-count {
+      .hero img { height: 100%; object-fit: cover; object-position: center 57%; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+      .hero:hover img { transform: scale(1.018); }
+      .hero-index {
         position: absolute;
-        right: 15px;
-        bottom: 13px;
-        color: white;
-        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-        font-size: .72rem;
-        letter-spacing: .08em;
+        right: 18px;
+        bottom: 16px;
+        color: #fff;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
         mix-blend-mode: difference;
       }
 
-      .about { background: var(--blue); color: white; padding: clamp(72px, 9vw, 138px) 0; }
-      .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 28px; }
-      .about-main { font-size: clamp(2rem, 4.8vw, 5.3rem); line-height: 1.04; letter-spacing: -.055em; }
-      .about-main p { margin: 0; }
-      .about-side { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-content: end; }
-      .about-side p { margin: 0; max-width: 37ch; }
-      .about-side a { font-weight: 700; text-underline-offset: 5px; }
+      .intro {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr 1fr;
+        gap: 34px;
+        padding: 28px 0 clamp(80px, 11vw, 160px);
+        border-bottom: 1px solid var(--line);
+      }
+      .intro p { margin: 0; }
+      .intro-copy {
+        max-width: 680px;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: clamp(1.35rem, 2.25vw, 2.45rem);
+        line-height: 1.16;
+        letter-spacing: -0.025em;
+      }
+      .intro-note { color: var(--muted); font-size: 0.95rem; max-width: 30ch; justify-self: end; }
+      .section-label { font-size: 0.72rem; letter-spacing: 0.13em; text-transform: uppercase; }
+
+      .gallery { padding: clamp(72px, 9vw, 135px) 0; }
+      .gallery-head {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 34px;
+        align-items: end;
+        margin-bottom: clamp(32px, 5vw, 70px);
+      }
+      .gallery-head h2,
+      .about h2 {
+        margin: 0;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: clamp(2.6rem, 5vw, 5.7rem);
+        font-weight: 400;
+        line-height: 0.95;
+        letter-spacing: -0.05em;
+      }
+      .gallery-head p { margin: 0 0 5px; color: var(--muted); max-width: 48ch; }
+      .archive-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 22px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid var(--ink);
+        text-decoration: none;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .archive-link span { transition: transform 220ms ease; }
+      .archive-link:hover span { transform: translateX(5px); }
+
+      .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 18px;
+        row-gap: clamp(56px, 8vw, 120px);
+      }
+      .photo { margin: 0; }
+      .photo:nth-child(1) { grid-column: 1 / span 7; }
+      .photo:nth-child(2) { grid-column: 9 / -1; margin-top: 16vw; }
+      .photo:nth-child(3) { grid-column: 2 / span 4; }
+      .photo:nth-child(4) { grid-column: 7 / -1; margin-top: 8vw; }
+      .photo:nth-child(5) { grid-column: 1 / span 5; margin-top: 5vw; }
+      .photo:nth-child(6) { grid-column: 7 / span 5; }
+      .photo:nth-child(7) { grid-column: 3 / span 8; }
+
+      .photo-button {
+        display: block;
+        width: 100%;
+        padding: 0;
+        border: 0;
+        background: #d7d5cd;
+        cursor: zoom-in;
+        overflow: hidden;
+      }
+      .photo-button img { transition: transform 700ms cubic-bezier(.2,.7,.2,1), filter 300ms; }
+      .photo-button:hover img { transform: scale(1.015); }
+      .photo-button:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+      .landscape img { aspect-ratio: 3 / 2; object-fit: cover; }
+      .portrait img { aspect-ratio: 2 / 3; object-fit: cover; }
+      figcaption {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        margin-top: 11px;
+        color: var(--muted);
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .about {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 34px;
+        padding: clamp(76px, 10vw, 150px) 0;
+        border-top: 1px solid var(--line);
+      }
+      .about-body { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+      .about-body p { margin: 0; max-width: 36ch; font-size: 1.05rem; }
+      .about-body p:last-child { color: var(--muted); }
 
       footer {
         display: flex;
         justify-content: space-between;
-        gap: 20px;
-        padding: 24px 0 28px;
-        color: var(--grey);
-        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-        font-size: .72rem;
-        letter-spacing: .08em;
+        gap: 24px;
+        padding: 22px 0 28px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.72rem;
+        letter-spacing: 0.11em;
         text-transform: uppercase;
       }
+
+      dialog {
+        width: 100vw;
+        max-width: none;
+        height: 100vh;
+        max-height: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: rgba(8, 8, 8, 0.97);
+        color: #fff;
+      }
+      dialog::backdrop { background: rgba(8, 8, 8, 0.97); }
+      .lightbox-inner { position: relative; display: grid; place-items: center; width: 100%; height: 100%; padding: 58px 5vw 48px; }
+      .lightbox-image { width: auto; max-width: 100%; height: auto; max-height: calc(100vh - 120px); object-fit: contain; }
+      .lightbox-close {
+        position: absolute;
+        top: 18px;
+        right: 20px;
+        border: 0;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .lightbox-caption { position: absolute; left: 20px; bottom: 17px; color: #aaa; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
+
       .reveal { opacity: 0; transform: translateY(18px); transition: opacity 700ms ease, transform 700ms ease; }
       .reveal.visible { opacity: 1; transform: none; }
+
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
-        *, *::before, *::after { transition-duration: .01ms !important; }
+        *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
         .reveal { opacity: 1; transform: none; }
       }
-      @media (max-width: 800px) {
-        .shell { width: min(100% - 22px, 1520px); }
+
+      @media (max-width: 760px) {
+        .page { width: min(100% - 22px, 1500px); }
         .nav { min-height: 58px; }
-        .nav-links { gap: 16px; }
-        .nav-links a:nth-child(2) { display: none; }
-        .hero { min-height: calc(100svh - 58px); padding-top: 38px; }
-        .hero-top, .section-head, .photo-feature-grid, .about-grid { grid-template-columns: 1fr; }
-        .hero-role { justify-self: start; margin-top: 46px; }
-        h1 { font-size: clamp(4.5rem, 22vw, 8.5rem); margin-top: 62px; }
-        .hero-bottom { grid-template-columns: 1fr 1fr; }
-        .hero-bottom p:nth-child(2) { text-align: right; }
-        .hero-bottom p:last-child { display: none; }
-        .section-head { gap: 22px; }
-        .project { grid-template-columns: 42px 1fr; gap: 13px 15px; }
-        .project-time { grid-column: 2; }
-        .project p:last-child { grid-column: 2; }
-        .photo-feature-grid { gap: 42px; }
-        .photo-copy { gap: 32px; }
-        .photo-copy h2 { margin-top: 18px; }
-        .photo-image { min-height: 65svh; }
-        .about-side { margin-top: 52px; }
-      }
-      @media (max-width: 520px) {
+        .nav-links { gap: 17px; }
         .nav-links a:first-child { display: none; }
-        .about-side { grid-template-columns: 1fr; }
+        .masthead { padding-top: 42px; }
+        h1 { font-size: clamp(4rem, 20vw, 7.2rem); line-height: 0.82; }
+        .hero { aspect-ratio: 4 / 5; }
+        .hero img { object-position: 50% 50%; }
+        .intro, .gallery-head, .about { grid-template-columns: 1fr; }
+        .intro { gap: 24px; }
+        .intro-note { justify-self: start; }
+        .gallery-head { gap: 20px; }
+        .photo-grid { grid-template-columns: 1fr 1fr; gap: 48px 12px; }
+        .photo:nth-child(n) { grid-column: auto; margin-top: 0; }
+        .photo:nth-child(1), .photo:nth-child(4), .photo:nth-child(7) { grid-column: 1 / -1; }
+        .about-body { grid-template-columns: 1fr; gap: 24px; }
+        footer { align-items: flex-end; }
       }
     </style>
   </head>
   <body>
-    <div class="shell">
+    <div class="page">
       <nav class="nav" aria-label="Primary navigation">
-        <a class="logo" href="#top"><span class="logo-dot" aria-hidden="true"></span>FRAN3C</a>
+        <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>Index</a>
         <div class="nav-links">
-          <a href="#work">Work</a>
-          <a href="#photography">Photography</a>
-          <a href="about/">About</a>
-          <a href="#contact">Contact</a>
+          <a href="#feature">Feature</a>
+          <a href="#gallery">Photographs</a>
+          <a href="#about">About</a>
+          <a href="franks-feature/">All 50</a>
         </div>
       </nav>
 
       <main id="top">
-        <section class="hero">
-          <div class="hero-top">
-            <p class="micro">Sihan Chen / Frank<br />Personal index · 2026</p>
-            <div class="hero-role">
-              <p>Electrical engineer, builder, and photographer.</p>
-              <p class="micro">B.S. Electrical Engineering · UIUC<br />Currently at Keywords AI</p>
+        <header class="masthead" id="feature">
+          <div class="eyebrow"><span>Feature 001</span><span>Personal archive · 2026</span></div>
+          <h1>Frank’s<br />Feature</h1>
+        </header>
+
+        <div class="hero reveal">
+          <img src="images/bridge.jpg" alt="Looking upward into the structure of a suspension bridge in fog" fetchpriority="high" />
+          <span class="hero-index">01 / 08</span>
+        </div>
+
+        <section class="intro reveal" aria-label="Feature introduction">
+          <p class="section-label">A visual notebook</p>
+          <p class="intro-copy">Fragments collected across years and distances—architecture, weather, light, and the quiet space between them.</p>
+          <p class="intro-note">This is the first entry in an evolving personal index of photographs, notes, and ongoing work.</p>
+        </section>
+
+        <section class="gallery" id="gallery">
+          <div class="gallery-head reveal">
+            <h2>Selected<br />frames</h2>
+            <div>
+              <p>Seven photographs from the larger archive. Open any frame for a closer look.</p>
+              <a class="archive-link" href="franks-feature/">View all 50 photographs <span aria-hidden="true">→</span></a>
             </div>
           </div>
-          <h1>FRAN<span class="three">3</span>C</h1>
-          <div class="hero-bottom micro">
-            <p>Hardware → Software</p>
-            <p>Robotics → AI</p>
-            <p>Work → Photographs</p>
+
+          <div class="photo-grid">
+            <figure class="photo reveal">
+              <button class="photo-button landscape" data-src="images/stars.jpg" data-caption="Night study / 02" aria-label="Open night sky photograph">
+                <img src="images/stars.jpg" alt="Long-exposure star trails above a rocky landscape" loading="lazy" />
+              </button>
+              <figcaption><span>Night study</span><span>02</span></figcaption>
+            </figure>
+            <figure class="photo reveal">
+              <button class="photo-button portrait" data-src="images/figure.jpg" data-caption="Figure and red / 03" aria-label="Open figure photograph">
+                <img src="images/figure.jpg" alt="Classical stone figure against red hanging forms and a glass roof" loading="lazy" />
+              </button>
+              <figcaption><span>Figure and red</span><span>03</span></figcaption>
+            </figure>
+            <figure class="photo reveal">
+              <button class="photo-button portrait" data-src="images/night-structure.jpg" data-caption="After dark / 04" aria-label="Open night architecture photograph">
+                <img src="images/night-structure.jpg" alt="Illuminated geometric architecture against a dark sky" loading="lazy" />
+              </button>
+              <figcaption><span>After dark</span><span>04</span></figcaption>
+            </figure>
+            <figure class="photo reveal">
+              <button class="photo-button landscape" data-src="images/coast.jpg" data-caption="At the edge / 05" aria-label="Open coastal photograph">
+                <img src="images/coast.jpg" alt="Coastal buildings facing a dark blue sea" loading="lazy" />
+              </button>
+              <figcaption><span>At the edge</span><span>05</span></figcaption>
+            </figure>
+            <figure class="photo reveal">
+              <button class="photo-button landscape" data-src="images/chicago.jpg" data-caption="Distant city / 06" aria-label="Open city photograph">
+                <img src="images/chicago.jpg" alt="A distant city skyline across a quiet beach at dusk" loading="lazy" />
+              </button>
+              <figcaption><span>Distant city</span><span>06</span></figcaption>
+            </figure>
+            <figure class="photo reveal">
+              <button class="photo-button landscape" data-src="images/maple.jpg" data-caption="Held light / 07" aria-label="Open maple leaf photograph">
+                <img src="images/maple.jpg" alt="A red maple leaf held against soft autumn light" loading="lazy" />
+              </button>
+              <figcaption><span>Held light</span><span>07</span></figcaption>
+            </figure>
+            <figure class="photo reveal">
+              <button class="photo-button landscape" data-src="images/yosemite.jpg" data-caption="First light / 08" aria-label="Open mountain photograph">
+                <img src="images/yosemite.jpg" alt="Black-and-white view of sunlight breaking between mountain cliffs" loading="lazy" />
+              </button>
+              <figcaption><span>First light</span><span>08</span></figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="about reveal" id="about">
+          <p class="section-label">About this index</p>
+          <div class="about-body">
+            <h2>More than<br />a gallery.</h2>
+            <div>
+              <p>A home for photographs, notes, small experiments, and the work that does not fit neatly anywhere else.</p>
+              <p style="margin-top: 24px;">The structure is intentionally open: future entries can become essays, projects, or new visual stories without turning the whole site into a photo portfolio.</p>
+            </div>
           </div>
         </section>
       </main>
+
+      <footer><span>Index / 2026</span><span>Built as an evolving archive</span></footer>
     </div>
 
-    <section class="work" id="work">
-      <div class="shell">
-        <div class="section-head reveal">
-          <p class="micro">Selected work / 01</p>
-          <div>
-            <h2>Things I’ve<br />helped build.</h2>
-            <p class="section-intro">Across electrical engineering, robotics, AI infrastructure, and developer tools.</p>
-          </div>
-        </div>
-        <div class="projects reveal">
-          <article class="project">
-            <p class="project-index">01</p><h3>Keywords AI</h3><p class="project-time">2025—Now</p><p>Founding DevRel working on LLM observability at a YC S24 company.</p>
-          </article>
-          <article class="project">
-            <p class="project-index">02</p><h3>Samsara</h3><p class="project-time">2024</p><p>Electrical engineering co-op; helped build Gretel, Samsara’s first-generation flat asset tracker.</p>
-          </article>
-          <article class="project">
-            <p class="project-index">03</p><h3>Alora AI</h3><p class="project-time">2023—2024</p><p>Founding engineer across backend and DevOps; selected for TechCrunch Disrupt and Beta University Accelerator.</p>
-          </article>
-          <article class="project">
-            <p class="project-index">04</p><h3>Research & Robotics</h3><p class="project-time">2022—2024</p><p>Computer vision, active learning, control systems, IMU calibration, and robotic platforms.</p>
-          </article>
-        </div>
-        <a class="full-link" href="about/">Full experience →</a>
+    <dialog id="lightbox" aria-label="Expanded photograph">
+      <div class="lightbox-inner">
+        <button class="lightbox-close" type="button">Close ×</button>
+        <img class="lightbox-image" src="" alt="" />
+        <span class="lightbox-caption"></span>
       </div>
-    </section>
-
-    <section class="photo-feature" id="photography">
-      <div class="shell photo-feature-grid">
-        <div class="photo-copy reveal">
-          <div>
-            <p class="micro">Photography / Feature 001</p>
-            <h2>Frank’s<br />Feature</h2>
-            <p>Fifty photographs: architecture, weather, night, landscape, and the quiet space between.</p>
-          </div>
-          <a class="full-link" href="franks-feature/">Open all 50 photographs →</a>
-        </div>
-        <a class="photo-image reveal" href="franks-feature/" aria-label="Open Frank’s Feature photography archive">
-          <img src="images/bridge.jpg" alt="Looking upward into the structure of a suspension bridge in fog" loading="lazy" />
-          <span class="photo-count">01 / 50</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="about" id="contact">
-      <div class="shell about-grid reveal">
-        <p class="micro">About / Contact</p>
-        <div>
-          <div class="about-main"><p>I move between circuits, systems, software, and images.</p></div>
-          <div class="about-side">
-            <p>Hi, I’m Sihan Chen. You can call me Frank. I studied Electrical Engineering at UIUC.</p>
-            <p>For work, collaborations, or a hello: <a href="mailto:csihan88@gmail.com">csihan88@gmail.com</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="shell">
-      <footer><span>FRAN3C / 2026</span><span>Sihan Chen</span></footer>
-    </div>
+    </dialog>
 
     <script>
+      const dialog = document.querySelector('#lightbox');
+      const expandedImage = dialog.querySelector('.lightbox-image');
+      const expandedCaption = dialog.querySelector('.lightbox-caption');
+      const closeButton = dialog.querySelector('.lightbox-close');
+
+      document.querySelectorAll('.photo-button').forEach((button) => {
+        button.addEventListener('click', () => {
+          const sourceImage = button.querySelector('img');
+          expandedImage.src = button.dataset.src;
+          expandedImage.alt = sourceImage.alt;
+          expandedCaption.textContent = button.dataset.caption;
+          dialog.showModal();
+        });
+      });
+
+      closeButton.addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -330,7 +415,8 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1 });
+      }, { threshold: 0.12 });
+
       document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
     </script>
   </body>
