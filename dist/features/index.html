@@ -43,25 +43,18 @@
       .project-time { padding-top:7px; color:var(--muted); font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; }
       .project-copy { max-width:52ch; padding-top:4px; color:#4f4e49; }
       .project-copy strong { display:block; margin-bottom:7px; color:var(--ink); font-weight:700; }
-      .profile { display:grid; grid-template-columns:1fr 2fr; gap:34px; padding:clamp(76px,10vw,150px) 0; border-top:1px solid var(--line); }
-      .profile-body { display:grid; grid-template-columns:1.15fr 1fr; gap:40px; }
-      .profile-main { margin:0; font:400 clamp(2.25rem,4.8vw,5.3rem)/1.02 Georgia,'Times New Roman',serif; letter-spacing:-.055em; }
-      .profile-side { align-self:end; }
-      .profile-side p { max-width:38ch; margin:0; }
-      .profile-side p:last-child { margin-top:24px; color:var(--muted); }
-      .profile-side a { color:var(--ink); font-weight:700; text-underline-offset:5px; }
       footer { display:flex; justify-content:space-between; gap:24px; padding:22px 0 28px; border-top:1px solid var(--line); color:var(--muted); font-size:.72rem; letter-spacing:.11em; text-transform:uppercase; }
       .reveal { opacity:0; transform:translateY(18px); transition:opacity .7s ease,transform .7s ease; }
       .reveal.visible { opacity:1; transform:none; }
       @media(prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *,*::before,*::after{transition-duration:.01ms!important}.reveal{opacity:1;transform:none} }
-      @media(max-width:760px){ .page{width:min(100% - 22px,1500px)} .nav{min-height:58px}.nav-links{gap:17px}.masthead{padding-top:42px}h1{font-size:clamp(4rem,20vw,7.2rem);line-height:.82}.intro,.work-head,.profile{grid-template-columns:1fr}.intro{gap:24px}.intro-note{justify-self:start}.work-head{gap:20px}.project{grid-template-columns:42px 1fr;gap:14px 15px}.project-time{grid-column:2;padding-top:0}.project-copy{grid-column:2}.project-no{width:32px;height:32px}.profile-body{grid-template-columns:1fr;gap:30px}.profile-side{align-self:start} }
+      @media(max-width:760px){ .page{width:min(100% - 22px,1500px)} .nav{min-height:58px}.nav-links{gap:17px}.nav-links a:first-child{display:none}.masthead{padding-top:42px}h1{font-size:clamp(4rem,20vw,7.2rem);line-height:.82}.intro,.work-head{grid-template-columns:1fr}.intro{gap:24px}.intro-note{justify-self:start}.work-head{gap:20px}.project{grid-template-columns:42px 1fr;gap:14px 15px}.project-time{grid-column:2;padding-top:0}.project-copy{grid-column:2}.project-no{width:32px;height:32px} }
     </style>
   </head>
   <body>
     <div class="page">
       <nav class="nav" aria-label="Primary navigation">
         <a class="brand" href="../"><span class="mark" aria-hidden="true"></span>FRAN3C</a>
-        <div class="nav-links"><a class="nav-link" href="#work">Features</a><a class="nav-link" href="../photographs/">Photographs</a></div>
+        <div class="nav-links"><a class="nav-link" href="#work">Features</a><a class="nav-link" href="../photographs/">Photographs</a><a class="nav-link" href="../about/">About</a></div>
       </nav>
       <main id="top">
         <header class="masthead">
@@ -93,13 +86,6 @@
           </div>
         </section>
 
-        <section class="profile reveal">
-          <p class="section-label">About / Contact</p>
-          <div class="profile-body">
-            <p class="profile-main">I move between circuits, systems, software, and images.</p>
-            <div class="profile-side"><p>Hi, I’m Sihan Chen. You can call me Frank. I studied Electrical Engineering at UIUC.</p><p>For work, collaborations, or a hello: <a href="mailto:csihan88@gmail.com">csihan88@gmail.com</a></p></div>
-          </div>
-        </section>
       </main>
       <footer><span>Features / 2026</span><span>Sihan Chen</span></footer>
     </div>

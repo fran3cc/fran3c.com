@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f1f0eb" />
+    <meta name="description" content="About Sihan Chen — electrical engineer, builder, developer advocate, and photographer." />
+    <title>About — FRAN3C</title>
+    <style>
+      :root { --paper:#f1f0eb; --ink:#11110f; --muted:#68675f; --line:rgba(17,17,15,.2); --accent:#e33b2e; }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.45 Arial,Helvetica,sans-serif; -webkit-font-smoothing:antialiased; }
+      a { color:inherit; }
+      .page { width:min(100% - 32px,1500px); margin:auto; }
+      .nav { position:sticky; top:0; z-index:20; min-height:68px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); background:color-mix(in srgb,var(--paper) 92%,transparent); backdrop-filter:blur(12px); }
+      .brand,.nav-link { font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; }
+      .brand { display:flex; align-items:center; gap:11px; }
+      .mark { width:10px; height:10px; border-radius:50%; background:var(--accent); }
+      .nav-links { display:flex; gap:30px; }
+      .nav-link:hover { text-decoration:underline; text-underline-offset:5px; }
+      .masthead { padding:clamp(42px,7vw,108px) 0 26px; }
+      .eyebrow { display:flex; justify-content:space-between; gap:24px; margin-bottom:18px; color:var(--muted); font-size:.74rem; letter-spacing:.13em; text-transform:uppercase; }
+      h1 { margin:0; font:400 clamp(4.25rem,13.7vw,13.5rem)/.78 Georgia,'Times New Roman',serif; letter-spacing:-.07em; }
+      .intro { display:grid; grid-template-columns:1fr 1.2fr 1fr; gap:34px; padding:28px 0 clamp(80px,11vw,160px); border-bottom:1px solid var(--line); }
+      .intro p { margin:0; }
+      .section-label { font-size:.72rem; letter-spacing:.13em; text-transform:uppercase; }
+      .intro-copy { max-width:680px; font:400 clamp(1.5rem,2.5vw,2.7rem)/1.14 Georgia,'Times New Roman',serif; letter-spacing:-.03em; }
+      .intro-note { max-width:31ch; justify-self:end; color:var(--muted); }
+      .experience { padding:clamp(72px,9vw,135px) 0; }
+      .experience-head { display:grid; grid-template-columns:1fr 2fr; gap:34px; align-items:end; margin-bottom:clamp(32px,5vw,70px); }
+      .experience-head h2 { margin:0; font:400 clamp(2.6rem,5vw,5.7rem)/.95 Georgia,'Times New Roman',serif; letter-spacing:-.05em; }
+      .experience-head p { max-width:48ch; margin:0 0 5px; color:var(--muted); }
+      .timeline { border-top:1px solid var(--line); }
+      .entry { display:grid; grid-template-columns:190px 1.1fr 1.5fr; gap:26px; padding:28px 0 31px; border-bottom:1px solid var(--line); }
+      .entry > * { margin:0; }
+      .entry time { color:var(--muted); font-size:.74rem; letter-spacing:.07em; text-transform:uppercase; }
+      .entry h3 { font:400 clamp(1.35rem,2.2vw,2.25rem)/1 Georgia,'Times New Roman',serif; letter-spacing:-.035em; }
+      .entry p { max-width:58ch; color:#4f4e49; }
+      .contact { display:grid; grid-template-columns:1fr 2fr; gap:34px; padding:clamp(76px,10vw,150px) 0; border-top:1px solid var(--line); }
+      .contact-main { margin:0; font:400 clamp(2.4rem,5.2vw,5.7rem)/1 Georgia,'Times New Roman',serif; letter-spacing:-.055em; }
+      .contact-side { align-self:end; }
+      .contact-side p { margin:0; }
+      .contact-side a { font-weight:700; text-underline-offset:5px; }
+      footer { display:flex; justify-content:space-between; gap:24px; padding:22px 0 28px; border-top:1px solid var(--line); color:var(--muted); font-size:.72rem; letter-spacing:.11em; text-transform:uppercase; }
+      .reveal { opacity:0; transform:translateY(18px); transition:opacity .7s ease,transform .7s ease; }
+      .reveal.visible { opacity:1; transform:none; }
+      @media(prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *,*::before,*::after{transition-duration:.01ms!important}.reveal{opacity:1;transform:none} }
+      @media(max-width:760px){ .page{width:min(100% - 22px,1500px)}.nav{min-height:58px}.nav-links{gap:17px}.nav-links a:first-child{display:none}.masthead{padding-top:42px}h1{font-size:clamp(4rem,20vw,7.2rem);line-height:.82}.intro,.experience-head,.contact{grid-template-columns:1fr}.intro{gap:24px}.intro-note{justify-self:start}.experience-head{gap:20px}.entry{grid-template-columns:1fr;gap:10px}.entry p{margin-top:5px}.contact{gap:30px}.contact-side{align-self:start} }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="../"><span class="mark" aria-hidden="true"></span>FRAN3C</a>
+        <div class="nav-links"><a class="nav-link" href="../features/">Features</a><a class="nav-link" href="../photographs/">Photographs</a><a class="nav-link" href="#top">About</a></div>
+      </nav>
+      <main id="top">
+        <header class="masthead">
+          <div class="eyebrow"><span>Sihan Chen / Frank</span><span>Electrical engineer · Builder · Photographer</span></div>
+          <h1>About<br />me</h1>
+        </header>
+        <section class="intro reveal" aria-label="About Sihan Chen">
+          <p class="section-label">Introduction</p>
+          <p class="intro-copy">Hi, I’m Sihan Chen. You can call me Frank.</p>
+          <p class="intro-note">B.S. in Electrical Engineering from the University of Illinois Urbana-Champaign.</p>
+        </section>
+
+        <section class="experience" id="experience">
+          <div class="experience-head reveal"><h2>Experience</h2><p>A selected history across AI, electrical engineering, research, robotics, education, and creative work.</p></div>
+          <div class="timeline reveal">
+            <article class="entry"><time>June 2025—Now</time><h3>Keywords AI<br />Founding DevRel</h3><p>LLM observability at a YC S24 company.</p></article>
+            <article class="entry"><time>June—December 2024</time><h3>Samsara<br />Electrical Engineering Co-op</h3><p>Built Samsara’s first-generation flat asset tracker, Gretel.</p></article>
+            <article class="entry"><time>June 2023—May 2024</time><h3>Alora AI<br />Founding Engineer</h3><p>DevOps and backend for a social application selected for TechCrunch Disrupt 2023 and Beta University Accelerator 2024.</p></article>
+            <article class="entry"><time>September 2023—May 2024</time><h3>Augmented Hearing Lab<br />Robotics</h3><p>Control systems, linear positioning systems, and API integration.</p></article>
+            <article class="entry"><time>April 2023—January 2024</time><h3>University of Illinois<br />Research</h3><p>Computer vision, U-Net model training, and active learning techniques.</p></article>
+            <article class="entry"><time>May—July 2023</time><h3>UIUC HCESC<br />Internship</h3><p>Control, signal processing, robot platforms, and frequency-domain analysis.</p></article>
+            <article class="entry"><time>2022—2023</time><h3>University of Illinois<br />Lab Assistant</h3><p>Supported student lab activities and collaborated with professors and teaching assistants on lab-data research to improve learning experiences.</p></article>
+            <article class="entry"><time>2021—2023</time><h3>UIUC Chinese Drama Society<br />Vice Chairman</h3><p>Actor coordination, sound effects, and lighting control for <em>Variations on Death</em>, <em>The Pillowman</em>, <em>The Black Cat</em>, and <em>The Life of Galileo</em>.</p></article>
+            <article class="entry"><time>September 2022—January 2023</time><h3>NASA L’Space Academy<br />Electrical Lead</h3><p>Power systems, imaging-technology assessment, and energy-distribution models.</p></article>
+            <article class="entry"><time>September 2022</time><h3>Illini RoboMaster<br />Firmware</h3><p>Developed control systems and calibrated IMUs.</p></article>
+            <article class="entry"><time>September 2019—May 2021</time><h3>Electronic Music Club</h3><p>Taught DAW software and improved audio equipment at Chengdu Foreign Languages School.</p></article>
+            <article class="entry"><time>February 2019—January 2021</time><h3>Lighthouse<br />Co-Founder</h3><p>Created and organized a blogging team focused on educational choices, interviews, bullying, and problems in the education system.</p></article>
+            <article class="entry"><time>September 2018—January 2020</time><h3>Math Modeling<br />Team Captain</h3><p>Developed evaluation models and wrote papers for American High School Mathematical Modeling Competition Team 10100; received an Honorable Mention in 2019.</p></article>
+            <article class="entry"><time>July 2019</time><h3>Research Intern</h3><p>Co-wrote and edited systematic reviews on the diagnosis and treatment of <em>Helicobacter pylori</em> infections, published in Frontiers and Wolters Kluwer.</p></article>
+          </div>
+        </section>
+
+        <section class="contact reveal">
+          <p class="section-label">Get in touch</p>
+          <div><p class="contact-main">Let’s make something real.</p><div class="contact-side"><p><a href="mailto:csihan88@gmail.com">csihan88@gmail.com</a></p></div></div>
+        </section>
+      </main>
+      <footer><span>About / FRAN3C</span><span>Sihan Chen</span></footer>
+    </div>
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+      }, { threshold:0.08 });
+      document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+    </script>
+  </body>
+</html>
