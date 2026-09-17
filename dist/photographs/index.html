@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f1f0eb" />
+    <meta name="description" content="Photographs — a personal archive of fifty images by Frank." />
+    <title>Photographs — Frank’s Index</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111111'/%3E%3Cpath d='M15 14h34v8H24v8h20v8H24v12h-9z' fill='%23f1f0eb'/%3E%3Ccircle cx='49' cy='49' r='5' fill='%23e33b2e'/%3E%3C/svg%3E" />
+    <style>
+      :root {
+        --paper: #f1f0eb;
+        --ink: #11110f;
+        --muted: #68675f;
+        --line: rgba(17, 17, 15, 0.2);
+        --accent: #e33b2e;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        line-height: 1.45;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img { display: block; width: 100%; }
+      a { color: inherit; }
+      button { font: inherit; }
+
+      .page { width: min(100% - 32px, 1500px); margin: 0 auto; }
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 68px;
+        border-bottom: 1px solid var(--line);
+        background: color-mix(in srgb, var(--paper) 92%, transparent);
+        backdrop-filter: blur(12px);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 11px;
+        text-decoration: none;
+        font-size: 0.84rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .brand-mark { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+      .nav-links { display: flex; gap: 30px; }
+      .nav-links a {
+        text-decoration: none;
+        font-size: 0.78rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .nav-links a:hover { text-decoration: underline; text-underline-offset: 5px; }
+
+      .masthead { padding: clamp(42px, 7vw, 108px) 0 26px; }
+      .eyebrow {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 18px;
+        color: var(--muted);
+        font-size: 0.74rem;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: clamp(4.25rem, 13.7vw, 13.5rem);
+        font-weight: 400;
+        line-height: 0.78;
+        letter-spacing: -0.07em;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: #161616;
+        aspect-ratio: 16 / 9;
+      }
+      .hero img { height: 100%; object-fit: cover; object-position: center 57%; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+      .hero:hover img { transform: scale(1.018); }
+      .hero-index {
+        position: absolute;
+        right: 18px;
+        bottom: 16px;
+        color: #fff;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        mix-blend-mode: difference;
+      }
+
+      .intro {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr 1fr;
+        gap: 34px;
+        padding: 28px 0 clamp(80px, 11vw, 160px);
+        border-bottom: 1px solid var(--line);
+      }
+      .intro p { margin: 0; }
+      .intro-copy {
+        max-width: 680px;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: clamp(1.35rem, 2.25vw, 2.45rem);
+        line-height: 1.16;
+        letter-spacing: -0.025em;
+      }
+      .intro-note { color: var(--muted); font-size: 0.95rem; max-width: 30ch; justify-self: end; }
+      .section-label { font-size: 0.72rem; letter-spacing: 0.13em; text-transform: uppercase; }
+
+      .gallery { padding: clamp(72px, 9vw, 135px) 0; }
+      .gallery-head {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 34px;
+        align-items: end;
+        margin-bottom: clamp(32px, 5vw, 70px);
+      }
+      .gallery-head h2,
+      .about h2 {
+        margin: 0;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: clamp(2.6rem, 5vw, 5.7rem);
+        font-weight: 400;
+        line-height: 0.95;
+        letter-spacing: -0.05em;
+      }
+      .gallery-head p { margin: 0 0 5px; color: var(--muted); max-width: 48ch; }
+      .archive-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 22px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid var(--ink);
+        text-decoration: none;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .archive-link span { transition: transform 220ms ease; }
+      .archive-link:hover span { transform: translateX(5px); }
+
+      .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 18px;
+        row-gap: clamp(56px, 8vw, 120px);
+      }
+      .photo { margin: 0; }
+      .photo:nth-child(1) { grid-column: 1 / span 7; }
+      .photo:nth-child(2) { grid-column: 9 / -1; margin-top: 16vw; }
+      .photo:nth-child(3) { grid-column: 2 / span 4; }
+      .photo:nth-child(4) { grid-column: 7 / -1; margin-top: 8vw; }
+      .photo:nth-child(5) { grid-column: 1 / span 5; margin-top: 5vw; }
+      .photo:nth-child(6) { grid-column: 7 / span 5; }
+      .photo:nth-child(7) { grid-column: 3 / span 8; }
+
+      .photo-button {
+        display: block;
+        width: 100%;
+        padding: 0;
+        border: 0;
+        background: #d7d5cd;
+        cursor: zoom-in;
+        overflow: hidden;
+      }
+      .photo-button img { transition: transform 700ms cubic-bezier(.2,.7,.2,1), filter 300ms; }
+      .photo-button:hover img { transform: scale(1.015); }
+      .photo-button:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+      .landscape img { aspect-ratio: 3 / 2; object-fit: cover; }
+      .portrait img { aspect-ratio: 2 / 3; object-fit: cover; }
+      figcaption {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        margin-top: 11px;
+        color: var(--muted);
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .about {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 34px;
+        padding: clamp(76px, 10vw, 150px) 0;
+        border-top: 1px solid var(--line);
+      }
+      .about-body { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+      .about-body p { margin: 0; max-width: 36ch; font-size: 1.05rem; }
+      .about-body p:last-child { color: var(--muted); }
+
+      footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 22px 0 28px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.72rem;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+      }
+
+      dialog {
+        width: 100vw;
+        max-width: none;
+        height: 100vh;
+        max-height: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: rgba(8, 8, 8, 0.97);
+        color: #fff;
+      }
+      dialog::backdrop { background: rgba(8, 8, 8, 0.97); }
+      .lightbox-inner { position: relative; display: grid; place-items: center; width: 100%; height: 100%; padding: 58px 5vw 48px; }
+      .lightbox-image { width: auto; max-width: 100%; height: auto; max-height: calc(100vh - 120px); object-fit: contain; }
+      .lightbox-close {
+        position: absolute;
+        top: 18px;
+        right: 20px;
+        border: 0;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .lightbox-caption { position: absolute; left: 20px; bottom: 17px; color: #aaa; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
+
+      .reveal { opacity: 0; transform: translateY(18px); transition: opacity 700ms ease, transform 700ms ease; }
+      .reveal.visible { opacity: 1; transform: none; }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+        .reveal { opacity: 1; transform: none; }
+      }
+
+      @media (max-width: 760px) {
+        .page { width: min(100% - 22px, 1500px); }
+        .nav { min-height: 58px; }
+        .nav-links { gap: 17px; }
+        .nav-links a:first-child { display: none; }
+        .masthead { padding-top: 42px; }
+        h1 { font-size: clamp(4rem, 20vw, 7.2rem); line-height: 0.82; }
+        .hero { aspect-ratio: 4 / 5; }
+        .hero img { object-position: 50% 50%; }
+        .intro, .gallery-head, .about { grid-template-columns: 1fr; }
+        .intro { gap: 24px; }
+        .intro-note { justify-self: start; }
+        .gallery-head { gap: 20px; }
+        .photo-grid { grid-template-columns: 1fr 1fr; gap: 48px 12px; }
+        .photo:nth-child(n) { grid-column: auto; margin-top: 0; }
+        .photo:nth-child(1), .photo:nth-child(4), .photo:nth-child(7) { grid-column: 1 / -1; }
+        .about-body { grid-template-columns: 1fr; gap: 24px; }
+        footer { align-items: flex-end; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="../"><span class="brand-mark" aria-hidden="true"></span>Index</a>
+        <div class="nav-links">
+          <a href="../features/">Features</a>
+          <a href="#top">Photographs</a>
+          <a href="#about">About</a>
+          <a href="archive/">All 50</a>
+        </div>
+      </nav>
+
+      <main id="top">
+        <header class="masthead">
+          <div class="eyebrow"><span>Photographs</span><span>Personal archive · 2026</span></div>
+          <h1>Photo-<br />graphs</h1>
+        </header>
+
+        <div class="hero reveal">
+          <img src="../images/bridge.jpg" alt="Looking upward into the structure of a suspension bridge in fog" fetchpriority="high" />
+          <span class="hero-index">01 / 08</span>
+        </div>
+
+        <section class="intro reveal" aria-label="Feature introduction">
+          <p class="section-label">A visual notebook</p>
+          <p class="intro-copy">Fragments collected across years and distances—architecture, weather, light, and the quiet space between them.</p>
+          <p class="intro-note">A personal archive of fifty photographs, presented here as a visual notebook.</p>
+        </section>
+
+        <section class="gallery" id="gallery">
+          <div class="gallery-head reveal">
+            <h2>Selected<br />frames</h2>
+            <div>
+              <p>Seven photographs from the larger archive. Open any frame for a closer look.</p>
+              <a class="archive-link" href="archive/">View all 50 photographs <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+          <div class="photo-grid">
+            <figure class="photo reveal">
+              <button class="photo-button landscape" data-src="../images/stars.jpg" data-caption="Night study / 02" aria-label="Open night sky photograph">
+                <img src="../images/stars.jpg" alt="Long-exposure star trails above a rocky landscape" loading="lazy" />
+              </button>
+              <figcaption><span>Night study</span><span>02</span></figcaption>
+            </figure>
+            <figure class="photo reveal">
+              <button class="photo-button portrait" data-src="../images/figure.jpg" data-caption="Figure and red / 03" aria-label="Open figure photograph">
+                <img src="../images/figure.jpg" alt="Classical stone figure against red hanging forms and a glass roof" loading="lazy" />
+              </button>
+              <figcaption><span>Figure and red</span><span>03</span></figcaption>
+            </figure>
+            <figure class="photo reveal">
+              <button class="photo-button portrait" data-src="../images/night-structure.jpg" data-caption="After dark / 04" aria-label="Open night architecture photograph">
+                <img src="../images/night-structure.jpg" alt="Illuminated geometric architecture against a dark sky" loading="lazy" />
+              </button>
+              <figcaption><span>After dark</span><span>04</span></figcaption>
+            </figure>
+            <figure class="photo reveal">
+              <button class="photo-button landscape" data-src="../images/coast.jpg" data-caption="At the edge / 05" aria-label="Open coastal photograph">
+                <img src="../images/coast.jpg" alt="Coastal buildings facing a dark blue sea" loading="lazy" />
+              </button>
+              <figcaption><span>At the edge</span><span>05</span></figcaption>
+            </figure>
+            <figure class="photo reveal">
+              <button class="photo-button landscape" data-src="../images/chicago.jpg" data-caption="Distant city / 06" aria-label="Open city photograph">
+                <img src="../images/chicago.jpg" alt="A distant city skyline across a quiet beach at dusk" loading="lazy" />
+              </button>
+              <figcaption><span>Distant city</span><span>06</span></figcaption>
+            </figure>
+            <figure class="photo reveal">
+              <button class="photo-button landscape" data-src="../images/maple.jpg" data-caption="Held light / 07" aria-label="Open maple leaf photograph">
+                <img src="../images/maple.jpg" alt="A red maple leaf held against soft autumn light" loading="lazy" />
+              </button>
+              <figcaption><span>Held light</span><span>07</span></figcaption>
+            </figure>
+            <figure class="photo reveal">
+              <button class="photo-button landscape" data-src="../images/yosemite.jpg" data-caption="First light / 08" aria-label="Open mountain photograph">
+                <img src="../images/yosemite.jpg" alt="Black-and-white view of sunlight breaking between mountain cliffs" loading="lazy" />
+              </button>
+              <figcaption><span>First light</span><span>08</span></figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="about reveal" id="about">
+          <p class="section-label">About this index</p>
+          <div class="about-body">
+            <h2>More than<br />a gallery.</h2>
+            <div>
+              <p>A home for photographs, notes, small experiments, and the work that does not fit neatly anywhere else.</p>
+              <p style="margin-top: 24px;">The structure is intentionally open: future entries can become essays, projects, or new visual stories without turning the whole site into a photo portfolio.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer><span>Photographs / 2026</span><span>50 images in the archive</span></footer>
+    </div>
+
+    <dialog id="lightbox" aria-label="Expanded photograph">
+      <div class="lightbox-inner">
+        <button class="lightbox-close" type="button">Close ×</button>
+        <img class="lightbox-image" src="" alt="" />
+        <span class="lightbox-caption"></span>
+      </div>
+    </dialog>
+
+    <script>
+      const dialog = document.querySelector('#lightbox');
+      const expandedImage = dialog.querySelector('.lightbox-image');
+      const expandedCaption = dialog.querySelector('.lightbox-caption');
+      const closeButton = dialog.querySelector('.lightbox-close');
+
+      document.querySelectorAll('.photo-button').forEach((button) => {
+        button.addEventListener('click', () => {
+          const sourceImage = button.querySelector('img');
+          expandedImage.src = button.dataset.src;
+          expandedImage.alt = sourceImage.alt;
+          expandedCaption.textContent = button.dataset.caption;
+          dialog.showModal();
+        });
+      });
+
+      closeButton.addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+    </script>
+  </body>
+</html>
