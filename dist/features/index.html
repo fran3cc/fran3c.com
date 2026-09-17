@@ -41,6 +41,9 @@
       .entry > * { margin:0; }
       .entry time { color:var(--muted); font-size:.74rem; letter-spacing:.07em; text-transform:uppercase; }
       .entry h3 { font:400 clamp(1.35rem,2.2vw,2.25rem)/1 Georgia,'Times New Roman',serif; letter-spacing:-.035em; }
+      .entry h3 a { color:inherit; text-decoration:none; text-underline-offset:.16em; text-decoration-thickness:1px; }
+      .entry h3 a:hover { text-decoration:underline; }
+      .entry h3 a:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
       .entry p { max-width:58ch; color:#4f4e49; }
       .more-fun { display:none; width:100%; align-items:center; justify-content:space-between; padding:24px 0; border:0; border-bottom:1px solid var(--line); background:transparent; color:var(--ink); font:700 .78rem/1 Arial,Helvetica,sans-serif; letter-spacing:.12em; text-transform:uppercase; cursor:pointer; }
       .more-fun span:last-child { font-size:1.15rem; transition:transform 220ms ease; }
@@ -90,9 +93,9 @@
         <section class="experience" id="experience">
           <div class="section-head reveal"><h2>Experience</h2></div>
           <div class="timeline reveal" id="experience-timeline">
-            <article class="entry"><time>June 2025—Now</time><h3>Respan<br />Head of DevRel</h3><p>LLM gateway, observability, and evals. YC W24.</p></article>
-            <article class="entry"><time>June—December 2024</time><h3>Samsara<br />Electrical Engineer</h3><p>Worked on Samsara’s STCE team on its first-generation flat asset trackers, AT13 and TL11.</p></article>
-            <article class="entry"><time>June 2023—May 2024</time><h3>Alora AI<br />Founding Engineer</h3><p>DevOps and backend.<br />TechCrunch Disrupt 2023.<br />Beta University Accelerator 2024.</p></article>
+            <article class="entry"><time>June 2025—Now</time><h3><a href="https://respan.ai" target="_blank" rel="noreferrer">Respan<br />Head of DevRel</a></h3><p>LLM gateway, observability, and evals. YC W24.</p></article>
+            <article class="entry"><time>June—December 2024</time><h3><a href="https://www.samsara.com/company/news/press-releases/samsara-introduces-the-tracking-label-and-agentic-shipment-center-to-close-supply-chain-visibility-gap" target="_blank" rel="noreferrer">Samsara<br />Electrical Engineer</a></h3><p>Worked on Samsara’s STCE team on its first-generation flat asset trackers, AT13 and TL11.</p></article>
+            <article class="entry"><time>June 2023—May 2024</time><h3><a href="https://techcrunch.com/startup-battlefield/company/alora-ai/" target="_blank" rel="noreferrer">Alora AI<br />Founding Engineer</a></h3><p>DevOps and backend.<br />TechCrunch Disrupt 2023.<br />Beta University Accelerator 2024.</p></article>
             <button class="more-fun" type="button" aria-expanded="false" aria-controls="additional-experience"><span>More fun</span><span aria-hidden="true">↓</span></button>
             <div id="additional-experience">
             <article class="entry extra-entry"><time>September 2023—May 2024</time><h3>Augmented Hearing Lab<br />Robotics</h3><p>Control systems, linear positioning systems, and API integration.</p></article>
