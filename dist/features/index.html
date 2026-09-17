@@ -29,11 +29,10 @@
       .cover img { display:block; width:100%; height:100%; object-fit:cover; object-position:center 48%; transition:transform 1.2s cubic-bezier(.2,.7,.2,1); }
       .cover:hover img { transform:scale(1.012); }
       .cover-label { position:absolute; right:18px; bottom:16px; color:#fff; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; mix-blend-mode:difference; }
-      .intro { display:grid; grid-template-columns:1fr 1.2fr 1fr; gap:34px; padding:28px 0 clamp(80px,11vw,160px); border-bottom:1px solid var(--line); }
+      .intro { display:grid; grid-template-columns:1fr 2fr; gap:34px; padding:28px 0 clamp(80px,11vw,160px); border-bottom:1px solid var(--line); }
       .intro p { margin:0; }
       .section-label { font-size:.72rem; letter-spacing:.13em; text-transform:uppercase; }
       .intro-copy { max-width:680px; font:400 clamp(1.35rem,2.25vw,2.45rem)/1.16 Georgia,'Times New Roman',serif; letter-spacing:-.025em; }
-      .intro-note { max-width:31ch; justify-self:end; color:var(--muted); }
       .experience { padding:clamp(72px,9vw,135px) 0; }
       .section-head { display:grid; grid-template-columns:1fr 2fr; gap:34px; align-items:end; margin-bottom:clamp(32px,5vw,70px); }
       .section-head h2,.about h2 { margin:0; font:400 clamp(2.6rem,5vw,5.7rem)/.95 Georgia,'Times New Roman',serif; letter-spacing:-.05em; }
@@ -62,7 +61,7 @@
       .reveal { opacity:0; transform:translateY(18px); transition:opacity .7s ease,transform .7s ease; }
       .reveal.visible { opacity:1; transform:none; }
       @media(prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *,*::before,*::after{transition-duration:.01ms!important}.reveal{opacity:1;transform:none} }
-      @media(max-width:760px){ .page{width:min(100% - 22px,1500px)}.nav{min-height:58px}.nav-links{gap:17px}.masthead{padding-top:42px}h1{font-size:clamp(4rem,20vw,7.2rem);line-height:.82}.intro,.section-head,.about{grid-template-columns:1fr}.intro{gap:24px}.intro-note{justify-self:start}.section-head{gap:20px}.entry{grid-template-columns:1fr;gap:10px}.entry p{margin-top:5px}.about{gap:28px}.about-copy{align-self:start} }
+      @media(max-width:760px){ .page{width:min(100% - 22px,1500px)}.nav{min-height:58px}.nav-links{gap:17px}.masthead{padding-top:42px}h1{font-size:clamp(4rem,20vw,7.2rem);line-height:.82}.intro,.section-head,.about{grid-template-columns:1fr}.intro{gap:24px}.section-head{gap:20px}.entry{grid-template-columns:1fr;gap:10px}.entry p{margin-top:5px}.about{gap:28px}.about-copy{align-self:start} }
     </style>
   </head>
   <body>
@@ -78,9 +77,8 @@
         </header>
         <div class="cover reveal"><img src="../images/IMG_2821.jpg" alt="Sihan Chen standing before the mountains of Torres del Paine" fetchpriority="high" /><span class="cover-label">FRAN3C / Experience</span></div>
         <section class="intro reveal" aria-label="Experience introduction">
-          <p class="section-label">Engineering and systems</p>
-          <p class="intro-copy">Work across circuits, software, AI infrastructure, developer tools, computer vision, and robotics.</p>
-          <p class="intro-note">An evolving record of experience, projects, research, and creative work.</p>
+          <p class="section-label">Engineering</p>
+          <p class="intro-copy">Work with circuits, AI, and art.</p>
         </section>
 
         <section class="experience" id="experience">
