@@ -8,6 +8,7 @@
     <title>Experience — FRAN3C</title>
     <link rel="icon" type="image/png" href="../images/fran3c-avatar.png" />
     <link rel="apple-touch-icon" href="../images/fran3c-avatar.png" />
+    <script>document.documentElement.classList.add('enhanced');</script>
     <style>
       :root { --paper:#f1f0eb; --ink:#11110f; --muted:#68675f; --line:rgba(17,17,15,.2); --accent:#e33b2e; }
       * { box-sizing:border-box; }
@@ -43,6 +44,15 @@
       .entry time { color:var(--muted); font-size:.74rem; letter-spacing:.07em; text-transform:uppercase; }
       .entry h3 { font:400 clamp(1.35rem,2.2vw,2.25rem)/1 Georgia,'Times New Roman',serif; letter-spacing:-.035em; }
       .entry p { max-width:58ch; color:#4f4e49; }
+      .more-fun { display:none; width:100%; align-items:center; justify-content:space-between; padding:24px 0; border:0; border-bottom:1px solid var(--line); background:transparent; color:var(--ink); font:700 .78rem/1 Arial,Helvetica,sans-serif; letter-spacing:.12em; text-transform:uppercase; cursor:pointer; }
+      .more-fun span:last-child { font-size:1.15rem; transition:transform 220ms ease; }
+      .more-fun:hover span:first-child { text-decoration:underline; text-underline-offset:5px; }
+      .more-fun:hover span:last-child { transform:translateY(4px); }
+      .more-fun:focus-visible { outline:2px solid var(--accent); outline-offset:5px; }
+      .enhanced .more-fun { display:flex; }
+      .enhanced .timeline:not(.is-expanded) #additional-experience { display:none; }
+      .enhanced .timeline.is-expanded .more-fun { display:none; }
+      .extra-entry:focus-visible { outline:2px solid var(--accent); outline-offset:-2px; }
       .about { display:grid; grid-template-columns:1fr 2fr; gap:34px; padding:clamp(76px,10vw,150px) 0; border-top:1px solid var(--line); }
       .about-copy { align-self:end; }
       .about-copy p { max-width:38ch; margin:0; }
@@ -75,21 +85,24 @@
 
         <section class="experience" id="experience">
           <div class="section-head reveal"><h2>Experience</h2><p>A selected history across AI, electrical engineering, research, robotics, education, and creative work.</p></div>
-          <div class="timeline reveal">
+          <div class="timeline reveal" id="experience-timeline">
             <article class="entry"><time>June 2025—Now</time><h3>Respan<br />Head of DevRel</h3><p>LLM gateway, observability, and evals. YC W24.</p></article>
             <article class="entry"><time>June—December 2024</time><h3>Samsara<br />Electrical Engineering Co-op</h3><p>Worked on Samsara’s STCE team on its first-generation flat asset trackers, AT13 and TL11.</p></article>
             <article class="entry"><time>June 2023—May 2024</time><h3>Alora AI<br />Founding Engineer</h3><p>DevOps and backend for a social application selected for TechCrunch Disrupt 2023 and Beta University Accelerator 2024.</p></article>
-            <article class="entry"><time>September 2023—May 2024</time><h3>Augmented Hearing Lab<br />Robotics</h3><p>Control systems, linear positioning systems, and API integration.</p></article>
-            <article class="entry"><time>April 2023—January 2024</time><h3>University of Illinois<br />Research</h3><p>Computer vision, U-Net model training, and active learning techniques.</p></article>
-            <article class="entry"><time>May—July 2023</time><h3>UIUC HCESC<br />Internship</h3><p>Control, signal processing, robot platforms, and frequency-domain analysis.</p></article>
-            <article class="entry"><time>2022—2023</time><h3>University of Illinois<br />Lab Assistant</h3><p>Supported student lab activities and collaborated with professors and teaching assistants on lab-data research to improve learning experiences.</p></article>
-            <article class="entry"><time>2021—2023</time><h3>UIUC Chinese Drama Society<br />Vice Chairman</h3><p>Actor coordination, sound effects, and lighting control for <em>Variations on Death</em>, <em>The Pillowman</em>, <em>The Black Cat</em>, and <em>The Life of Galileo</em>.</p></article>
-            <article class="entry"><time>September 2022—January 2023</time><h3>NASA L’Space Academy<br />Electrical Lead</h3><p>Power systems, imaging-technology assessment, and energy-distribution models.</p></article>
-            <article class="entry"><time>September 2022</time><h3>Illini RoboMaster<br />Firmware</h3><p>Developed control systems and calibrated IMUs.</p></article>
-            <article class="entry"><time>September 2019—May 2021</time><h3>Electronic Music Club</h3><p>Taught DAW software and improved audio equipment at Chengdu Foreign Languages School.</p></article>
-            <article class="entry"><time>February 2019—January 2021</time><h3>Lighthouse<br />Co-Founder</h3><p>Created and organized a blogging team focused on educational choices, interviews, bullying, and problems in the education system.</p></article>
-            <article class="entry"><time>September 2018—January 2020</time><h3>Math Modeling<br />Team Captain</h3><p>Developed evaluation models and wrote papers for American High School Mathematical Modeling Competition Team 10100; received an Honorable Mention in 2019.</p></article>
-            <article class="entry"><time>July 2019</time><h3>Research Intern</h3><p>Co-wrote and edited systematic reviews on the diagnosis and treatment of <em>Helicobacter pylori</em> infections, published in Frontiers and Wolters Kluwer.</p></article>
+            <button class="more-fun" type="button" aria-expanded="false" aria-controls="additional-experience"><span>More fun</span><span aria-hidden="true">↓</span></button>
+            <div id="additional-experience">
+            <article class="entry extra-entry"><time>September 2023—May 2024</time><h3>Augmented Hearing Lab<br />Robotics</h3><p>Control systems, linear positioning systems, and API integration.</p></article>
+            <article class="entry extra-entry"><time>April 2023—January 2024</time><h3>University of Illinois<br />Research</h3><p>Computer vision, U-Net model training, and active learning techniques.</p></article>
+            <article class="entry extra-entry"><time>May—July 2023</time><h3>UIUC HCESC<br />Internship</h3><p>Control, signal processing, robot platforms, and frequency-domain analysis.</p></article>
+            <article class="entry extra-entry"><time>2022—2023</time><h3>University of Illinois<br />Lab Assistant</h3><p>Supported student lab activities and collaborated with professors and teaching assistants on lab-data research to improve learning experiences.</p></article>
+            <article class="entry extra-entry"><time>2021—2023</time><h3>UIUC Chinese Drama Society<br />Vice Chairman</h3><p>Actor coordination, sound effects, and lighting control for <em>Variations on Death</em>, <em>The Pillowman</em>, <em>The Black Cat</em>, and <em>The Life of Galileo</em>.</p></article>
+            <article class="entry extra-entry"><time>September 2022—January 2023</time><h3>NASA L’Space Academy<br />Electrical Lead</h3><p>Power systems, imaging-technology assessment, and energy-distribution models.</p></article>
+            <article class="entry extra-entry"><time>September 2022</time><h3>Illini RoboMaster<br />Firmware</h3><p>Developed control systems and calibrated IMUs.</p></article>
+            <article class="entry extra-entry"><time>September 2019—May 2021</time><h3>Electronic Music Club</h3><p>Taught DAW software and improved audio equipment at Chengdu Foreign Languages School.</p></article>
+            <article class="entry extra-entry"><time>February 2019—January 2021</time><h3>Lighthouse<br />Co-Founder</h3><p>Created and organized a blogging team focused on educational choices, interviews, bullying, and problems in the education system.</p></article>
+            <article class="entry extra-entry"><time>September 2018—January 2020</time><h3>Math Modeling<br />Team Captain</h3><p>Developed evaluation models and wrote papers for American High School Mathematical Modeling Competition Team 10100; received an Honorable Mention in 2019.</p></article>
+            <article class="entry extra-entry"><time>July 2019</time><h3>Research Intern</h3><p>Co-wrote and edited systematic reviews on the diagnosis and treatment of <em>Helicobacter pylori</em> infections, published in Frontiers and Wolters Kluwer.</p></article>
+            </div>
           </div>
         </section>
 
@@ -105,6 +118,15 @@
         entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
       }, { threshold:0.08 });
       document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+      const timeline = document.querySelector('#experience-timeline');
+      const moreFun = document.querySelector('.more-fun');
+      moreFun?.addEventListener('click', () => {
+        timeline.classList.add('is-expanded');
+        moreFun.setAttribute('aria-expanded', 'true');
+        const firstExtra = timeline.querySelector('.extra-entry');
+        firstExtra.setAttribute('tabindex', '-1');
+        firstExtra.focus({ preventScroll:true });
+      });
     </script>
   </body>
 </html>
