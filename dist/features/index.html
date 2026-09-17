@@ -22,6 +22,10 @@
       .masthead { padding:clamp(42px,7vw,108px) 0 26px; }
       .eyebrow { display:flex; justify-content:space-between; gap:24px; margin-bottom:18px; color:var(--muted); font-size:.74rem; letter-spacing:.13em; text-transform:uppercase; }
       h1 { margin:0; font:400 clamp(4.25rem,13.7vw,13.5rem)/.78 Georgia,'Times New Roman',serif; letter-spacing:-.07em; }
+      .cover { position:relative; overflow:hidden; aspect-ratio:16/9; background:#191817; }
+      .cover img { display:block; width:100%; height:100%; object-fit:cover; object-position:center 48%; transition:transform 1.2s cubic-bezier(.2,.7,.2,1); }
+      .cover:hover img { transform:scale(1.012); }
+      .cover-label { position:absolute; right:18px; bottom:16px; color:#fff; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; mix-blend-mode:difference; }
       .intro { display:grid; grid-template-columns:1fr 1.2fr 1fr; gap:34px; padding:28px 0 clamp(80px,11vw,160px); border-bottom:1px solid var(--line); }
       .intro p { margin:0; }
       .section-label { font-size:.72rem; letter-spacing:.13em; text-transform:uppercase; }
@@ -56,7 +60,7 @@
   <body>
     <div class="page">
       <nav class="nav" aria-label="Primary navigation">
-        <a class="brand" href="../"><span class="mark" aria-hidden="true"></span>Index</a>
+        <a class="brand" href="../"><span class="mark" aria-hidden="true"></span>FRAN3C</a>
         <div class="nav-links"><a class="nav-link" href="#work">Features</a><a class="nav-link" href="../photographs/">Photographs</a></div>
       </nav>
       <main id="top">
@@ -64,6 +68,11 @@
           <div class="eyebrow"><span>Selected work</span><span>2022—Now</span></div>
           <h1>Fea-<br />tures</h1>
         </header>
+
+        <div class="cover reveal">
+          <img src="../images/feature-cover.jpg" alt="Sihan Chen standing before the mountains of Torres del Paine" fetchpriority="high" />
+          <span class="cover-label">FRAN3C / Features</span>
+        </div>
 
         <section class="intro reveal" aria-label="Features introduction">
           <p class="section-label">Engineering and systems</p>
