@@ -63,6 +63,7 @@
       .contact p { max-width:52ch; margin:0; }
       .contact a { font-weight:700; text-underline-offset:5px; }
       footer { display:flex; justify-content:space-between; gap:24px; padding:22px 0 28px; border-top:1px solid var(--line); color:var(--muted); font-size:.72rem; letter-spacing:.11em; text-transform:uppercase; }
+      footer span:last-child { letter-spacing:.04em; text-transform:none; }
       .reveal { opacity:0; transform:translateY(18px); transition:opacity .7s ease,transform .7s ease; }
       .reveal.visible { opacity:1; transform:none; }
       @media(prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *,*::before,*::after{transition-duration:.01ms!important}.reveal{opacity:1;transform:none} }
@@ -151,7 +152,7 @@
 
         <section class="contact reveal"><p class="section-label">Contact</p><p>For work, collaborations, or a hello: <a href="mailto:csihan88@gmail.com">csihan88@gmail.com</a></p></section>
       </main>
-      <footer><span>Projects / 2026</span><span>Sihan Chen</span></footer>
+      <footer><span>Projects / 2026</span><span>Frank · Sihan Chen</span></footer>
     </div>
     <script>
       const observer = new IntersectionObserver((entries) => {

@@ -42,6 +42,7 @@
       .publication-links a:hover { color:var(--ink); text-decoration:underline; text-underline-offset:4px; }
       .writing { padding-top:0; }
       footer { display:flex; justify-content:space-between; gap:24px; padding:22px 0 28px; border-top:1px solid var(--line); color:var(--muted); font-size:.72rem; letter-spacing:.11em; text-transform:uppercase; }
+      footer span:last-child { letter-spacing:.04em; text-transform:none; }
       .reveal { opacity:0; transform:translateY(18px); transition:opacity .7s ease,transform .7s ease; }
       .reveal.visible { opacity:1; transform:none; }
       @media(prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *,*::before,*::after{transition-duration:.01ms!important}.reveal{opacity:1;transform:none} }
@@ -143,7 +144,7 @@
           </div>
         </section>
       </main>
-      <footer><span>Publications / 2026</span><span>Sihan Chen</span></footer>
+      <footer><span>Publications / 2026</span><span>Frank · Sihan Chen</span></footer>
     </div>
     <script>
       const observer = new IntersectionObserver((entries) => {

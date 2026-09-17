@@ -32,6 +32,7 @@
       .route-visual { height:clamp(210px,25vw,360px); overflow:hidden; background:#191919; }
       .route-visual img { transition:transform .8s cubic-bezier(.2,.7,.2,1); }
       .route:hover .route-visual img { transform:scale(1.018); }
+      footer { display:flex; justify-content:flex-end; padding:22px 0 28px; border-top:1px solid var(--line); color:var(--muted); font-size:.72rem; letter-spacing:.04em; }
       @media(max-width:760px){ .page{width:min(100% - 22px,1500px)} nav{min-height:58px}.nav-links{gap:16px} header{padding-top:48px} h1{font-size:clamp(4.4rem,23vw,8rem)} .routes{grid-template-columns:1fr}.route{min-height:520px;padding-left:0!important;padding-right:0!important;border-right:0!important;border-bottom:1px solid var(--line)}.route:last-child{border-bottom:0}.route h2{margin:44px 0 32px;font-size:clamp(4rem,18vw,6.5rem)} }
     </style>
   </head>
@@ -56,6 +57,7 @@
           <div class="route-visual"><img src="images/bridge.jpg" alt="Suspension bridge structure disappearing into fog" /></div>
         </a>
       </main>
+      <footer>Frank · Sihan Chen</footer>
     </div>
   </body>
 </html>
