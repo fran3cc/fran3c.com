@@ -143,6 +143,21 @@
         letter-spacing: -0.05em;
       }
       .gallery-head p { margin: 0 0 5px; color: var(--muted); max-width: 48ch; }
+      .archive-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 22px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid var(--ink);
+        text-decoration: none;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .archive-link span { transition: transform 220ms ease; }
+      .archive-link:hover span { transform: translateX(5px); }
 
       .photo-grid {
         display: grid;
@@ -273,6 +288,7 @@
           <a href="#feature">Feature</a>
           <a href="#gallery">Photographs</a>
           <a href="#about">About</a>
+          <a href="franks-feature/">All 50</a>
         </div>
       </nav>
 
@@ -296,7 +312,10 @@
         <section class="gallery" id="gallery">
           <div class="gallery-head reveal">
             <h2>Selected<br />frames</h2>
-            <p>Seven photographs from the larger archive. Open any frame for a closer look.</p>
+            <div>
+              <p>Seven photographs from the larger archive. Open any frame for a closer look.</p>
+              <a class="archive-link" href="franks-feature/">View all 50 photographs <span aria-hidden="true">→</span></a>
+            </div>
           </div>
 
           <div class="photo-grid">
