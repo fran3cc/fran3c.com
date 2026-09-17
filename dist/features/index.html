@@ -3,108 +3,97 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0b0b0c" />
+    <meta name="theme-color" content="#f1f0eb" />
     <meta name="description" content="Selected features from Sihan Chen’s work across AI, electrical engineering, robotics, and developer tools." />
     <title>Features — Frank’s Index</title>
     <style>
-      :root { --black:#0b0b0c; --paper:#f1f0eb; --blue:#4f72ff; --grey:#aaa9a1; --ink:#11110f; --muted:#65645e; --dark-line:rgba(255,255,255,.2); --light-line:rgba(17,17,15,.2); }
+      :root { --paper:#f1f0eb; --ink:#11110f; --muted:#68675f; --line:rgba(17,17,15,.2); --accent:#e33b2e; }
       * { box-sizing:border-box; }
       html { scroll-behavior:smooth; }
-      body { margin:0; background:var(--black); color:#fff; font:16px/1.45 Arial,Helvetica,sans-serif; -webkit-font-smoothing:antialiased; }
+      body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.45 Arial,Helvetica,sans-serif; -webkit-font-smoothing:antialiased; }
       a { color:inherit; }
-      .shell { width:min(100% - 34px,1500px); margin:auto; }
-      .nav { position:sticky; top:0; z-index:20; min-height:68px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--dark-line); background:color-mix(in srgb,var(--black) 90%,transparent); backdrop-filter:blur(14px); }
-      .brand,.nav-link { color:#fff; font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; }
+      .page { width:min(100% - 32px,1500px); margin:0 auto; }
+      .nav { position:sticky; top:0; z-index:20; min-height:68px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); background:color-mix(in srgb,var(--paper) 92%,transparent); backdrop-filter:blur(12px); }
+      .brand,.nav-link { font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; }
       .brand { display:flex; align-items:center; gap:11px; }
-      .mark { width:10px; height:10px; border-radius:50%; background:var(--blue); }
-      .nav-links { display:flex; gap:28px; }
+      .mark { width:10px; height:10px; border-radius:50%; background:var(--accent); }
+      .nav-links { display:flex; gap:30px; }
       .nav-link:hover { text-decoration:underline; text-underline-offset:5px; }
-      .hero { min-height:calc(100svh - 68px); display:flex; flex-direction:column; justify-content:space-between; padding:clamp(48px,7vw,105px) 0 30px; }
-      .hero-top { display:grid; grid-template-columns:1fr 1.5fr; gap:30px; }
-      .micro { margin:0; color:var(--grey); font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.75rem; letter-spacing:.09em; text-transform:uppercase; }
-      .hero-copy { justify-self:end; max-width:700px; }
-      .hero-copy p:first-child { margin:0; font-size:clamp(1.5rem,3vw,3.3rem); line-height:1.08; letter-spacing:-.04em; }
-      .hero-copy .micro { margin-top:18px; }
-      h1 { margin:clamp(58px,8vw,120px) 0 0; font-size:clamp(5rem,17vw,16.5rem); font-weight:700; line-height:.7; letter-spacing:-.09em; }
-      h1 span { color:var(--blue); }
-      .hero-bottom { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; padding-top:26px; border-top:1px solid var(--dark-line); }
-      .hero-bottom p:nth-child(2) { text-align:center; }
-      .hero-bottom p:last-child { text-align:right; }
-      .work { background:var(--paper); color:var(--ink); padding:clamp(76px,9vw,140px) 0; }
-      .section-head { display:grid; grid-template-columns:1fr 2fr; gap:30px; align-items:end; margin-bottom:clamp(48px,7vw,95px); }
-      .work .micro { color:var(--muted); }
-      h2 { margin:0; font:400 clamp(3.4rem,8vw,8.4rem)/.87 Georgia,'Times New Roman',serif; letter-spacing:-.06em; }
-      .section-copy { max-width:48ch; margin:24px 0 0; color:var(--muted); font-size:1.05rem; }
-      .projects { border-top:1px solid var(--light-line); }
-      .project { display:grid; grid-template-columns:80px 1.05fr .75fr 1.35fr; gap:26px; padding:34px 0 38px; border-bottom:1px solid var(--light-line); transition:padding .25s ease,background .25s ease; }
-      .project:hover { padding-left:18px; padding-right:18px; background:#e9e7e0; }
+      .masthead { padding:clamp(42px,7vw,108px) 0 26px; }
+      .eyebrow { display:flex; justify-content:space-between; gap:24px; margin-bottom:18px; color:var(--muted); font-size:.74rem; letter-spacing:.13em; text-transform:uppercase; }
+      h1 { margin:0; font:400 clamp(4.25rem,13.7vw,13.5rem)/.78 Georgia,'Times New Roman',serif; letter-spacing:-.07em; }
+      .intro { display:grid; grid-template-columns:1fr 1.2fr 1fr; gap:34px; padding:28px 0 clamp(80px,11vw,160px); border-bottom:1px solid var(--line); }
+      .intro p { margin:0; }
+      .section-label { font-size:.72rem; letter-spacing:.13em; text-transform:uppercase; }
+      .intro-copy { max-width:680px; font:400 clamp(1.35rem,2.25vw,2.45rem)/1.16 Georgia,'Times New Roman',serif; letter-spacing:-.025em; }
+      .intro-note { max-width:31ch; justify-self:end; color:var(--muted); font-size:.95rem; }
+      .work { padding:clamp(72px,9vw,135px) 0; }
+      .work-head { display:grid; grid-template-columns:1fr 2fr; gap:34px; align-items:end; margin-bottom:clamp(32px,5vw,70px); }
+      .work-head h2 { margin:0; font:400 clamp(2.6rem,5vw,5.7rem)/.95 Georgia,'Times New Roman',serif; letter-spacing:-.05em; }
+      .work-head p { max-width:48ch; margin:0 0 5px; color:var(--muted); }
+      .projects { border-top:1px solid var(--line); }
+      .project { display:grid; grid-template-columns:72px 1.05fr .75fr 1.35fr; gap:24px; padding:34px 0 38px; border-bottom:1px solid var(--line); }
       .project > * { margin:0; }
-      .project-no,.project-time { color:var(--muted); font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.75rem; letter-spacing:.06em; text-transform:uppercase; }
-      .project h3 { font-size:clamp(1.5rem,2.4vw,2.65rem); line-height:.95; letter-spacing:-.04em; }
-      .project p:last-child { max-width:52ch; color:#4f4e49; }
-      .project strong { display:block; margin-bottom:7px; color:var(--ink); font-weight:700; }
-      .profile { background:var(--blue); padding:clamp(76px,9vw,140px) 0; }
-      .profile-grid { display:grid; grid-template-columns:1fr 2fr; gap:30px; }
-      .profile .micro { color:rgba(255,255,255,.72); }
-      .profile-main { font-size:clamp(2.2rem,5.5vw,5.8rem); line-height:1.01; letter-spacing:-.06em; }
-      .profile-main p { margin:0; }
-      .profile-side { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:clamp(48px,7vw,92px); }
-      .profile-side p { margin:0; max-width:38ch; }
-      .profile-side a { font-weight:700; text-underline-offset:5px; }
-      footer { display:flex; justify-content:space-between; gap:24px; padding:24px 0 28px; color:var(--grey); font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; }
+      .project-no { width:34px; height:34px; display:grid; place-items:center; border:1px solid var(--line); border-radius:50%; color:var(--accent); font-size:.72rem; letter-spacing:.06em; }
+      .project h3 { font:400 clamp(1.8rem,3.3vw,3.9rem)/.95 Georgia,'Times New Roman',serif; letter-spacing:-.045em; }
+      .project-time { padding-top:7px; color:var(--muted); font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; }
+      .project-copy { max-width:52ch; padding-top:4px; color:#4f4e49; }
+      .project-copy strong { display:block; margin-bottom:7px; color:var(--ink); font-weight:700; }
+      .profile { display:grid; grid-template-columns:1fr 2fr; gap:34px; padding:clamp(76px,10vw,150px) 0; border-top:1px solid var(--line); }
+      .profile-body { display:grid; grid-template-columns:1.15fr 1fr; gap:40px; }
+      .profile-main { margin:0; font:400 clamp(2.25rem,4.8vw,5.3rem)/1.02 Georgia,'Times New Roman',serif; letter-spacing:-.055em; }
+      .profile-side { align-self:end; }
+      .profile-side p { max-width:38ch; margin:0; }
+      .profile-side p:last-child { margin-top:24px; color:var(--muted); }
+      .profile-side a { color:var(--ink); font-weight:700; text-underline-offset:5px; }
+      footer { display:flex; justify-content:space-between; gap:24px; padding:22px 0 28px; border-top:1px solid var(--line); color:var(--muted); font-size:.72rem; letter-spacing:.11em; text-transform:uppercase; }
       .reveal { opacity:0; transform:translateY(18px); transition:opacity .7s ease,transform .7s ease; }
       .reveal.visible { opacity:1; transform:none; }
       @media(prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *,*::before,*::after{transition-duration:.01ms!important}.reveal{opacity:1;transform:none} }
-      @media(max-width:800px){ .shell{width:min(100% - 22px,1500px)} .nav{min-height:58px}.nav-links{gap:16px}.hero{min-height:calc(100svh - 58px);padding-top:38px}.hero-top,.section-head,.profile-grid{grid-template-columns:1fr}.hero-copy{justify-self:start;margin-top:45px}h1{font-size:clamp(4.5rem,23vw,8.8rem);margin-top:62px}.hero-bottom{grid-template-columns:1fr 1fr}.hero-bottom p:nth-child(2){text-align:right}.hero-bottom p:last-child{display:none}.section-head{gap:24px}.project{grid-template-columns:45px 1fr;gap:13px 16px}.project-time{grid-column:2}.project p:last-child{grid-column:2}.project:hover{padding-left:0;padding-right:0;background:transparent}.profile-side{grid-template-columns:1fr;margin-top:42px} }
+      @media(max-width:760px){ .page{width:min(100% - 22px,1500px)} .nav{min-height:58px}.nav-links{gap:17px}.masthead{padding-top:42px}h1{font-size:clamp(4rem,20vw,7.2rem);line-height:.82}.intro,.work-head,.profile{grid-template-columns:1fr}.intro{gap:24px}.intro-note{justify-self:start}.work-head{gap:20px}.project{grid-template-columns:42px 1fr;gap:14px 15px}.project-time{grid-column:2;padding-top:0}.project-copy{grid-column:2}.project-no{width:32px;height:32px}.profile-body{grid-template-columns:1fr;gap:30px}.profile-side{align-self:start} }
     </style>
   </head>
   <body>
-    <div class="shell">
+    <div class="page">
       <nav class="nav" aria-label="Primary navigation">
         <a class="brand" href="../"><span class="mark" aria-hidden="true"></span>Index</a>
         <div class="nav-links"><a class="nav-link" href="#work">Features</a><a class="nav-link" href="../photographs/">Photographs</a></div>
       </nav>
-      <main>
-        <section class="hero">
-          <div class="hero-top">
-            <p class="micro">Sihan Chen / Frank<br />Selected work · 2026</p>
-            <div class="hero-copy">
-              <p>Engineering, AI, robotics, and the systems connecting them.</p>
-              <p class="micro">Electrical engineer → Builder → Developer relations</p>
-            </div>
+      <main id="top">
+        <header class="masthead">
+          <div class="eyebrow"><span>Selected work</span><span>2022—Now</span></div>
+          <h1>Fea-<br />tures</h1>
+        </header>
+
+        <section class="intro reveal" aria-label="Features introduction">
+          <p class="section-label">Engineering and systems</p>
+          <p class="intro-copy">Work across circuits, software, AI infrastructure, developer tools, computer vision, and robotics.</p>
+          <p class="intro-note">Four selected projects from Sihan Chen’s work as an engineer, builder, and developer advocate.</p>
+        </section>
+
+        <section class="work" id="work">
+          <div class="work-head reveal">
+            <h2>Selected<br />projects</h2>
+            <p>Projects spanning hardware and software, from connected devices to the systems used to understand AI.</p>
           </div>
-          <h1>FEA<span>—</span><br />TURES</h1>
-          <div class="hero-bottom micro"><p>Hardware → Software</p><p>Robotics → AI</p><p>04 selected projects</p></div>
+          <div class="projects reveal">
+            <article class="project"><p class="project-no">01</p><h3>Keywords AI</h3><p class="project-time">2025—Now</p><p class="project-copy"><strong>Founding DevRel</strong>Working on LLM observability and the developer experience around evaluating, tracing, and improving AI systems at a YC S24 company.</p></article>
+            <article class="project"><p class="project-no">02</p><h3>Gretel</h3><p class="project-time">Samsara · 2024</p><p class="project-copy"><strong>Electrical Engineering</strong>Helped build Samsara’s first-generation flat asset tracker during an electrical engineering co-op.</p></article>
+            <article class="project"><p class="project-no">03</p><h3>Alora AI</h3><p class="project-time">2023—2024</p><p class="project-copy"><strong>Founding Engineer</strong>Worked across backend and DevOps for a social application selected for TechCrunch Disrupt and Beta University Accelerator.</p></article>
+            <article class="project"><p class="project-no">04</p><h3>Research &amp;<br />Robotics</h3><p class="project-time">2022—2024</p><p class="project-copy"><strong>UIUC</strong>Computer vision, active learning, control systems, signal processing, IMU calibration, and robotic platforms.</p></article>
+          </div>
+        </section>
+
+        <section class="profile reveal">
+          <p class="section-label">About / Contact</p>
+          <div class="profile-body">
+            <p class="profile-main">I move between circuits, systems, software, and images.</p>
+            <div class="profile-side"><p>Hi, I’m Sihan Chen. You can call me Frank. I studied Electrical Engineering at UIUC.</p><p>For work, collaborations, or a hello: <a href="mailto:csihan88@gmail.com">csihan88@gmail.com</a></p></div>
+          </div>
         </section>
       </main>
+      <footer><span>Features / 2026</span><span>Sihan Chen</span></footer>
     </div>
-
-    <section class="work" id="work">
-      <div class="shell">
-        <div class="section-head reveal">
-          <p class="micro">Selected features / 01—04</p>
-          <div><h2>Things I’ve<br />helped build.</h2><p class="section-copy">Work across electrical engineering, AI infrastructure, developer tools, computer vision, and robotics.</p></div>
-        </div>
-        <div class="projects reveal">
-          <article class="project"><p class="project-no">01</p><h3>Keywords AI</h3><p class="project-time">2025—Now</p><p><strong>Founding DevRel</strong>Working on LLM observability and the developer experience around evaluating, tracing, and improving AI systems at a YC S24 company.</p></article>
-          <article class="project"><p class="project-no">02</p><h3>Gretel</h3><p class="project-time">Samsara · 2024</p><p><strong>Electrical Engineering</strong>Helped build Samsara’s first-generation flat asset tracker during an electrical engineering co-op.</p></article>
-          <article class="project"><p class="project-no">03</p><h3>Alora AI</h3><p class="project-time">2023—2024</p><p><strong>Founding Engineer</strong>Worked across backend and DevOps for a social application selected for TechCrunch Disrupt and Beta University Accelerator.</p></article>
-          <article class="project"><p class="project-no">04</p><h3>Research &amp;<br />Robotics</h3><p class="project-time">2022—2024</p><p><strong>UIUC</strong>Computer vision, active learning, control systems, signal processing, IMU calibration, and robotic platforms.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="profile">
-      <div class="shell profile-grid reveal">
-        <p class="micro">About / Contact</p>
-        <div>
-          <div class="profile-main"><p>I move between circuits, systems, software, and images.</p></div>
-          <div class="profile-side"><p>Hi, I’m Sihan Chen. You can call me Frank. I studied Electrical Engineering at UIUC.</p><p>For work, collaborations, or a hello: <a href="mailto:csihan88@gmail.com">csihan88@gmail.com</a></p></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="shell"><footer><span>Features / 2026</span><span>Sihan Chen</span></footer></div>
     <script>
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
