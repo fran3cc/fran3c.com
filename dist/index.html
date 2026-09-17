@@ -22,12 +22,10 @@
       header { display:grid; grid-template-columns:1fr 2fr; gap:32px; padding:clamp(50px,8vw,118px) 0 clamp(48px,7vw,100px); }
       .kicker { margin:10px 0 0; color:var(--muted); font-size:.74rem; letter-spacing:.13em; text-transform:uppercase; }
       h1 { margin:0; font:400 clamp(5rem,13vw,13rem)/.78 Georgia,'Times New Roman',serif; letter-spacing:-.07em; }
-      .routes { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); }
+      .routes { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--line); }
       .route { min-height:clamp(430px,54vw,760px); padding:28px 0 34px; color:inherit; text-decoration:none; display:flex; flex-direction:column; }
-      .route:first-child { padding-right:18px; }
-      .route:nth-child(2) { padding-left:18px; padding-right:18px; }
+      .route:first-child { padding-right:18px; border-right:1px solid var(--line); }
       .route:last-child { padding-left:18px; }
-      .route:not(:last-child) { border-right:1px solid var(--line); }
       .route-meta { display:flex; justify-content:space-between; gap:20px; color:var(--muted); font-size:.73rem; letter-spacing:.11em; text-transform:uppercase; }
       .route h2 { margin:auto 0 18px; font:400 clamp(3.3rem,7vw,7.4rem)/.84 Georgia,'Times New Roman',serif; letter-spacing:-.06em; }
       .route p { max-width:38ch; margin:0; color:var(--muted); }
@@ -43,7 +41,7 @@
     <div class="page">
       <nav aria-label="Primary navigation">
         <a class="brand" href="./"><span class="mark" aria-hidden="true"></span>FRAN3C</a>
-        <div class="nav-links"><a class="nav-link" href="features/">Features</a><a class="nav-link" href="photographs/">Photographs</a><a class="nav-link" href="about/">About</a></div>
+        <div class="nav-links"><a class="nav-link" href="features/">Features</a><a class="nav-link" href="photographs/">Photographs</a></div>
       </nav>
       <header>
         <p class="kicker">Personal index · 2026</p>
@@ -61,12 +59,6 @@
           <h2>Photo-<br />graphs</h2>
           <p>A visual notebook of architecture, weather, light, and distance.</p>
           <div class="route-visual"><img src="images/bridge.jpg" alt="Suspension bridge structure disappearing into fog" /></div>
-        </a>
-        <a class="route" href="about/">
-          <div class="route-meta"><span>03</span><span>About · Experience</span></div>
-          <h2>About</h2>
-          <p>Sihan Chen—electrical engineer, builder, developer advocate, and photographer.</p>
-          <div class="route-visual"><img src="images/feature-cover.jpg" alt="Sihan Chen standing before the mountains of Torres del Paine" /></div>
         </a>
       </main>
       <footer><span>Index / 2026</span><span>Features &amp; photographs</span></footer>
