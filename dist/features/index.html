@@ -58,23 +58,11 @@
       .social-links { display:flex; flex-wrap:wrap; gap:18px 28px; margin-top:30px; }
       .social-links a { padding-bottom:5px; border-bottom:1px solid var(--ink); font-size:.74rem; font-weight:700; letter-spacing:.1em; text-decoration:none; text-transform:uppercase; }
       .social-links a:hover { color:var(--muted); }
-      .publications { padding:0 0 clamp(82px,10vw,145px); }
-      .publication-group + .publication-group { margin-top:clamp(60px,8vw,110px); }
-      .publication-group-title { margin:0 0 18px; color:var(--muted); font-size:.72rem; letter-spacing:.13em; text-transform:uppercase; }
-      .publication-list { border-top:1px solid var(--line); }
-      .publication { display:grid; grid-template-columns:190px 1fr; gap:26px; align-items:start; padding:28px 0 31px; border-bottom:1px solid var(--line); }
-      .publication-meta { color:var(--muted); font-size:.74rem; letter-spacing:.07em; text-transform:uppercase; }
-      .publication h3 { max-width:31ch; margin:0; font:400 clamp(1.35rem,2.2vw,2.25rem)/1 Georgia,'Times New Roman',serif; letter-spacing:-.035em; }
-      .publication h3 a { color:inherit; text-decoration:none; }
-      .publication h3 a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:7px; }
-      .publication-links { display:flex; flex-wrap:wrap; gap:10px 22px; margin:17px 0 0; }
-      .publication-links a { color:var(--muted); font-size:.72rem; font-weight:700; letter-spacing:.08em; text-decoration:none; text-transform:uppercase; }
-      .publication-links a:hover { color:var(--ink); text-decoration:underline; text-underline-offset:4px; }
       footer { display:flex; justify-content:space-between; gap:24px; padding:22px 0 28px; border-top:1px solid var(--line); color:var(--muted); font-size:.72rem; letter-spacing:.11em; text-transform:uppercase; }
       .reveal { opacity:0; transform:translateY(18px); transition:opacity .7s ease,transform .7s ease; }
       .reveal.visible { opacity:1; transform:none; }
       @media(prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *,*::before,*::after{transition-duration:.01ms!important}.reveal{opacity:1;transform:none} }
-      @media(max-width:760px){ .page{width:min(100% - 22px,1500px)}.nav{min-height:58px}.nav-links{gap:17px}.masthead{padding-top:42px}h1{font-size:clamp(4rem,20vw,7.2rem);line-height:.82}.section-nav{justify-content:flex-start;overflow-x:auto}.about{grid-template-columns:1fr;gap:32px}.entry,.publication{grid-template-columns:1fr;gap:10px}.entry p{margin-top:5px} }
+      @media(max-width:760px){ .page{width:min(100% - 22px,1500px)}.nav{min-height:58px}.nav-links{gap:17px}.masthead{padding-top:42px}h1{font-size:clamp(4rem,20vw,7.2rem);line-height:.82}.section-nav{justify-content:flex-start;overflow-x:auto}.about{grid-template-columns:1fr;gap:32px}.entry{grid-template-columns:1fr;gap:10px}.entry p{margin-top:5px} }
     </style>
   </head>
   <body>
@@ -83,7 +71,7 @@
         <a class="brand" href="../"><img class="brand-avatar" src="../images/fran3c-avatar.png" alt="" />FRAN3C</a>
         <div class="nav-links"><a class="nav-link" href="#top">Experience</a><a class="nav-link" href="../photographs/">Photographs</a></div>
       </nav>
-      <nav class="section-nav" aria-label="Experience sections"><a href="#experience">Experience</a><a href="../projects/">Projects ↗</a><a href="#publications">Publications</a></nav>
+      <nav class="section-nav" aria-label="Experience sections"><a href="#experience">Experience</a><a href="../projects/">Projects ↗</a><a href="../publications/">Publications ↗</a></nav>
       <main id="top">
         <header class="masthead">
           <div class="eyebrow"><span>Experience</span><span>Sihan Chen / Frank</span></div>
@@ -117,25 +105,6 @@
             <article class="entry extra-entry"><time>February 2019—January 2021</time><h3>Lighthouse<br />Co-Founder</h3><p>Created and organized a blogging team focused on educational choices, interviews, bullying, and problems in the education system.</p></article>
             <article class="entry extra-entry"><time>September 2018—January 2020</time><h3>Math Modeling<br />Team Captain</h3><p>Developed evaluation models and wrote papers for American High School Mathematical Modeling Competition Team 10100; received an Honorable Mention in 2019.</p></article>
             <article class="entry extra-entry"><time>July 2019</time><h3>Research Intern</h3><p>Co-wrote and edited systematic reviews on the diagnosis and treatment of <em>Helicobacter pylori</em> infections, published in Frontiers and Wolters Kluwer.</p></article>
-            </div>
-          </div>
-        </section>
-
-        <section class="publications" id="publications">
-          <div class="section-head reveal"><h2>Publications</h2></div>
-          <div class="publication-group reveal">
-            <p class="publication-group-title">Research</p>
-            <div class="publication-list">
-              <article class="publication"><span class="publication-meta">2024 · arXiv · CVPR demo</span><div><h3><a href="https://arxiv.org/abs/2406.13093" target="_blank" rel="noreferrer">RITA: A Real-time Interactive Talking Avatars Framework ↗</a></h3><p class="publication-links"><a href="https://arxiv.org/abs/2406.13093" target="_blank" rel="noreferrer">arXiv:2406.13093 ↗</a><a href="https://cvpr.thecvf.com/Conferences/2024/News/Demos" target="_blank" rel="noreferrer">CVPR 2024 demo ↗</a></p></div></article>
-              <article class="publication"><span class="publication-meta">2020 · Frontiers in Oncology</span><div><h3><a href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2020.542330/full" target="_blank" rel="noreferrer">Expression and Prognostic Significance of Metastasis-Associated Protein 1 in Gastrointestinal Cancer ↗</a></h3><p class="publication-links"><a href="https://doi.org/10.3389/fonc.2020.542330" target="_blank" rel="noreferrer">DOI: 10.3389/fonc.2020.542330 ↗</a></p></div></article>
-              <article class="publication"><span class="publication-meta">2019 · Medicine</span><div><h3><a href="https://pubmed.ncbi.nlm.nih.gov/31876728/" target="_blank" rel="noreferrer"><em>Helicobacter pylori</em> and Gastrointestinal and Neurological Diseases ↗</a></h3><p class="publication-links"><a href="https://doi.org/10.1097/MD.0000000000018460" target="_blank" rel="noreferrer">DOI: 10.1097/MD.0000000000018460 ↗</a></p></div></article>
-            </div>
-          </div>
-          <div class="publication-group reveal">
-            <p class="publication-group-title">Bylined articles</p>
-            <div class="publication-list">
-              <article class="publication"><span class="publication-meta">19 Mar 2026 · AI Journal</span><div><h3><a href="https://aijourn.com/using-finite-state-machines-as-a-lens-for-building-ai-agents/" target="_blank" rel="noreferrer">Using Finite State Machines as a Lens for Building AI Agents ↗</a></h3></div></article>
-              <article class="publication"><span class="publication-meta">21 May 2026 · AI Journal</span><div><h3><a href="https://aijourn.com/why-your-ai-agent-is-a-black-box-and-how-to-fix-it-with-opentelemetry/" target="_blank" rel="noreferrer">Why Your AI Agent Is a Black Box (And How to Fix It with OpenTelemetry) ↗</a></h3></div></article>
             </div>
           </div>
         </section>

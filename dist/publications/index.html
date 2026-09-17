@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f1f0eb" />
+    <meta name="description" content="Research publications and bylined writing by Sihan Chen." />
+    <title>Publications — FRAN3C</title>
+    <link rel="icon" type="image/png" href="../images/fran3c-avatar.png" />
+    <link rel="apple-touch-icon" href="../images/fran3c-avatar.png" />
+    <style>
+      :root { --paper:#f1f0eb; --ink:#11110f; --muted:#68675f; --line:rgba(17,17,15,.2); --accent:#e33b2e; }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.45 Arial,Helvetica,sans-serif; -webkit-font-smoothing:antialiased; }
+      a { color:inherit; }
+      .page { width:min(100% - 32px,1500px); margin:auto; }
+      .nav { position:sticky; top:0; z-index:20; min-height:68px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); background:color-mix(in srgb,var(--paper) 92%,transparent); backdrop-filter:blur(12px); }
+      .brand,.nav-link { font-size:.78rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; }
+      .brand { display:flex; align-items:center; gap:11px; }
+      .brand-avatar { width:26px; height:26px; border-radius:50%; object-fit:cover; }
+      .nav-links { display:flex; gap:30px; }
+      .nav-link:hover { text-decoration:underline; text-underline-offset:5px; }
+      .section-nav { display:flex; justify-content:flex-end; gap:22px; padding:15px 0; border-bottom:1px solid var(--line); }
+      .section-nav a { color:var(--muted); font-size:.7rem; font-weight:700; letter-spacing:.11em; text-decoration:none; text-transform:uppercase; }
+      .section-nav a:hover { color:var(--ink); text-decoration:underline; text-underline-offset:5px; }
+      .masthead { padding:clamp(48px,8vw,118px) 0 clamp(44px,6vw,88px); border-bottom:1px solid var(--line); }
+      .eyebrow { display:flex; justify-content:space-between; gap:24px; margin-bottom:22px; color:var(--muted); font-size:.74rem; letter-spacing:.13em; text-transform:uppercase; }
+      h1 { margin:0; font:400 clamp(4.25rem,13.7vw,13.5rem)/.78 Georgia,'Times New Roman',serif; letter-spacing:-.07em; }
+      .intro { display:grid; grid-template-columns:1fr 2fr; gap:34px; padding:30px 0 clamp(74px,9vw,130px); }
+      .section-label { margin:0; font-size:.72rem; letter-spacing:.13em; text-transform:uppercase; }
+      .intro-copy { max-width:760px; margin:0; font:400 clamp(1.45rem,2.65vw,3rem)/1.1 Georgia,'Times New Roman',serif; letter-spacing:-.035em; }
+      .publication-group { padding:0 0 clamp(82px,10vw,145px); }
+      .group-head { display:flex; justify-content:space-between; gap:24px; align-items:flex-end; margin-bottom:20px; }
+      .group-head h2 { margin:0; font:400 clamp(2.6rem,5vw,5.7rem)/.95 Georgia,'Times New Roman',serif; letter-spacing:-.05em; }
+      .group-head span { color:var(--muted); font-size:.72rem; letter-spacing:.13em; text-transform:uppercase; }
+      .publication-list { border-top:1px solid var(--line); }
+      .publication { display:grid; grid-template-columns:190px minmax(0,1fr) auto; gap:26px; align-items:start; padding:28px 0 31px; border-bottom:1px solid var(--line); }
+      .publication-meta { color:var(--muted); font-size:.74rem; letter-spacing:.07em; text-transform:uppercase; }
+      .publication h3 { max-width:34ch; margin:0; font:400 clamp(1.35rem,2.2vw,2.25rem)/1 Georgia,'Times New Roman',serif; letter-spacing:-.035em; }
+      .publication h3 a { color:inherit; text-decoration:none; }
+      .publication h3 a:hover { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:7px; }
+      .publication-links { display:flex; flex-direction:column; align-items:flex-end; gap:10px; min-width:210px; }
+      .publication-links a { color:var(--muted); font-size:.72rem; font-weight:700; letter-spacing:.08em; text-align:right; text-decoration:none; text-transform:uppercase; }
+      .publication-links a:hover { color:var(--ink); text-decoration:underline; text-underline-offset:4px; }
+      .writing { padding-top:0; }
+      footer { display:flex; justify-content:space-between; gap:24px; padding:22px 0 28px; border-top:1px solid var(--line); color:var(--muted); font-size:.72rem; letter-spacing:.11em; text-transform:uppercase; }
+      .reveal { opacity:0; transform:translateY(18px); transition:opacity .7s ease,transform .7s ease; }
+      .reveal.visible { opacity:1; transform:none; }
+      @media(prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *,*::before,*::after{transition-duration:.01ms!important}.reveal{opacity:1;transform:none} }
+      @media(max-width:760px){
+        .page{width:min(100% - 22px,1500px)}
+        .nav{min-height:58px}
+        .nav-links{gap:17px}
+        .section-nav{justify-content:flex-start;overflow-x:auto}
+        .masthead{padding-top:42px}
+        h1{font-size:clamp(3.6rem,19vw,7.2rem);line-height:.82}
+        .intro{grid-template-columns:1fr;gap:20px}
+        .group-head{align-items:flex-start;flex-direction:column;gap:12px}
+        .publication{grid-template-columns:1fr;gap:10px}
+        .publication-links{align-items:flex-start;min-width:0;margin-top:8px}
+        .publication-links a{text-align:left}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="../"><img class="brand-avatar" src="../images/fran3c-avatar.png" alt="" />FRAN3C</a>
+        <div class="nav-links"><a class="nav-link" href="../features/">Experience</a><a class="nav-link" href="../photographs/">Photographs</a></div>
+      </nav>
+      <nav class="section-nav" aria-label="Experience sections"><a href="../features/">← Experience</a><a href="../projects/">Projects</a><a href="#top">Publications</a></nav>
+      <main id="top">
+        <header class="masthead">
+          <div class="eyebrow"><span>Publications</span><span>Research · writing</span></div>
+          <h1>Publi-<br />cations</h1>
+        </header>
+        <section class="intro reveal" aria-label="Publications introduction">
+          <p class="section-label">Selected record</p>
+          <p class="intro-copy">Research across computer vision, oncology, bioinformatics, and AI systems—plus writing about how agents are built and observed.</p>
+        </section>
+
+        <section class="publication-group" aria-labelledby="research-heading">
+          <div class="group-head reveal"><h2 id="research-heading">Research</h2><span>10 publications</span></div>
+          <div class="publication-list reveal">
+            <article class="publication">
+              <span class="publication-meta">2024 · arXiv · CVPR demo</span>
+              <h3><a href="https://arxiv.org/abs/2406.13093" target="_blank" rel="noreferrer">RITA: A Real-time Interactive Talking Avatars Framework ↗</a></h3>
+              <div class="publication-links"><a href="https://arxiv.org/abs/2406.13093" target="_blank" rel="noreferrer">arXiv:2406.13093 ↗</a><a href="https://cvpr.thecvf.com/Conferences/2024/News/Demos" target="_blank" rel="noreferrer">CVPR 2024 demo ↗</a></div>
+            </article>
+            <article class="publication">
+              <span class="publication-meta">2021 · Bioengineered</span>
+              <h3><a href="https://pubmed.ncbi.nlm.nih.gov/34845974/" target="_blank" rel="noreferrer">Integrative analysis of prognostic value and immune infiltration of spindle and kinetochore-associated family members in breast cancer ↗</a></h3>
+              <div class="publication-links"><a href="https://doi.org/10.1080/21655979.2021.1995576" target="_blank" rel="noreferrer">DOI: 10.1080/21655979.2021.1995576 ↗</a></div>
+            </article>
+            <article class="publication">
+              <span class="publication-meta">2021 · Frontiers in Oncology</span>
+              <h3><a href="https://pubmed.ncbi.nlm.nih.gov/34616672/" target="_blank" rel="noreferrer">Identification, Verification and Pathway Enrichment Analysis of Prognosis-Related Immune Genes in Patients With Hepatocellular Carcinoma ↗</a></h3>
+              <div class="publication-links"><a href="https://doi.org/10.3389/fonc.2021.695001" target="_blank" rel="noreferrer">DOI: 10.3389/fonc.2021.695001 ↗</a></div>
+            </article>
+            <article class="publication">
+              <span class="publication-meta">2021 · Frontiers in Oncology</span>
+              <h3><a href="https://pubmed.ncbi.nlm.nih.gov/34150617/" target="_blank" rel="noreferrer">FHL3 Contributes to EMT and Chemotherapy Resistance Through Up-Regulation of Slug and Activation of TGFβ/Smad-Independent Pathways in Gastric Cancer ↗</a></h3>
+              <div class="publication-links"><a href="https://doi.org/10.3389/fonc.2021.649029" target="_blank" rel="noreferrer">DOI: 10.3389/fonc.2021.649029 ↗</a></div>
+            </article>
+            <article class="publication">
+              <span class="publication-meta">2021 · World Journal of Surgical Oncology</span>
+              <h3><a href="https://pubmed.ncbi.nlm.nih.gov/33865399/" target="_blank" rel="noreferrer">A 4-gene-based hypoxia signature is associated with tumor immune microenvironment and predicts the prognosis of pancreatic cancer patients ↗</a></h3>
+              <div class="publication-links"><a href="https://doi.org/10.1186/s12957-021-02204-7" target="_blank" rel="noreferrer">DOI: 10.1186/s12957-021-02204-7 ↗</a></div>
+            </article>
+            <article class="publication">
+              <span class="publication-meta">2020 · Frontiers in Oncology</span>
+              <h3><a href="https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2020.542330/full" target="_blank" rel="noreferrer">Expression and Prognostic Significance of Metastasis-Associated Protein 1 in Gastrointestinal Cancer ↗</a></h3>
+              <div class="publication-links"><a href="https://doi.org/10.3389/fonc.2020.542330" target="_blank" rel="noreferrer">DOI: 10.3389/fonc.2020.542330 ↗</a></div>
+            </article>
+            <article class="publication">
+              <span class="publication-meta">2020 · Bioscience Reports</span>
+              <h3><a href="https://pubmed.ncbi.nlm.nih.gov/32744303/" target="_blank" rel="noreferrer">Mining novel cell glycolysis related gene markers that can predict the survival of colon adenocarcinoma patients ↗</a></h3>
+              <div class="publication-links"><a href="https://doi.org/10.1042/BSR20201427" target="_blank" rel="noreferrer">DOI: 10.1042/BSR20201427 ↗</a></div>
+            </article>
+            <article class="publication">
+              <span class="publication-meta">2020 · World Journal of Surgical Oncology</span>
+              <h3><a href="https://pubmed.ncbi.nlm.nih.gov/32600423/" target="_blank" rel="noreferrer">Prediction and identification of immune genes related to the prognosis of patients with colon adenocarcinoma and its mechanisms ↗</a></h3>
+              <div class="publication-links"><a href="https://doi.org/10.1186/s12957-020-01921-9" target="_blank" rel="noreferrer">DOI: 10.1186/s12957-020-01921-9 ↗</a></div>
+            </article>
+            <article class="publication">
+              <span class="publication-meta">2020 · Medical Science Monitor</span>
+              <h3><a href="https://pubmed.ncbi.nlm.nih.gov/32555128/" target="_blank" rel="noreferrer">Using the TCGA Database to Predict and Analyze Tumor Microenvironment Genes Related to Poor Prognosis of Colon Cancer ↗</a></h3>
+              <div class="publication-links"><a href="https://doi.org/10.12659/MSM.923707" target="_blank" rel="noreferrer">DOI: 10.12659/MSM.923707 ↗</a></div>
+            </article>
+            <article class="publication">
+              <span class="publication-meta">2019 · Medicine</span>
+              <h3><a href="https://pubmed.ncbi.nlm.nih.gov/31876728/" target="_blank" rel="noreferrer"><em>Helicobacter pylori</em> and Gastrointestinal and Neurological Diseases ↗</a></h3>
+              <div class="publication-links"><a href="https://doi.org/10.1097/MD.0000000000018460" target="_blank" rel="noreferrer">DOI: 10.1097/MD.0000000000018460 ↗</a></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="publication-group writing" aria-labelledby="writing-heading">
+          <div class="group-head reveal"><h2 id="writing-heading">Writing</h2><span>Bylined articles</span></div>
+          <div class="publication-list reveal">
+            <article class="publication">
+              <span class="publication-meta">21 May 2026 · AI Journal</span>
+              <h3><a href="https://aijourn.com/why-your-ai-agent-is-a-black-box-and-how-to-fix-it-with-opentelemetry/" target="_blank" rel="noreferrer">Why Your AI Agent Is a Black Box (And How to Fix It with OpenTelemetry) ↗</a></h3>
+              <div class="publication-links"><a href="https://aijourn.com/why-your-ai-agent-is-a-black-box-and-how-to-fix-it-with-opentelemetry/" target="_blank" rel="noreferrer">Read article ↗</a></div>
+            </article>
+            <article class="publication">
+              <span class="publication-meta">19 Mar 2026 · AI Journal</span>
+              <h3><a href="https://aijourn.com/using-finite-state-machines-as-a-lens-for-building-ai-agents/" target="_blank" rel="noreferrer">Using Finite State Machines as a Lens for Building AI Agents ↗</a></h3>
+              <div class="publication-links"><a href="https://aijourn.com/using-finite-state-machines-as-a-lens-for-building-ai-agents/" target="_blank" rel="noreferrer">Read article ↗</a></div>
+            </article>
+          </div>
+        </section>
+      </main>
+      <footer><span>Publications / 2026</span><span>Sihan Chen</span></footer>
+    </div>
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+      }, { threshold:0.08 });
+      document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+    </script>
+  </body>
+</html>
