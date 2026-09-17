@@ -34,9 +34,8 @@
       .section-label { font-size:.72rem; letter-spacing:.13em; text-transform:uppercase; }
       .intro-copy { max-width:680px; font:400 clamp(1.35rem,2.25vw,2.45rem)/1.16 Georgia,'Times New Roman',serif; letter-spacing:-.025em; }
       .experience { padding:clamp(72px,9vw,135px) 0; }
-      .section-head { display:grid; grid-template-columns:1fr 2fr; gap:34px; align-items:end; margin-bottom:clamp(32px,5vw,70px); }
+      .section-head { margin-bottom:clamp(32px,5vw,70px); }
       .section-head h2,.about h2 { margin:0; font:400 clamp(2.6rem,5vw,5.7rem)/.95 Georgia,'Times New Roman',serif; letter-spacing:-.05em; }
-      .section-head p { max-width:48ch; margin:0 0 5px; color:var(--muted); }
       .timeline { border-top:1px solid var(--line); }
       .entry { display:grid; grid-template-columns:190px 1.1fr 1.5fr; gap:26px; padding:28px 0 31px; border-bottom:1px solid var(--line); }
       .entry > * { margin:0; }
@@ -61,7 +60,7 @@
       .reveal { opacity:0; transform:translateY(18px); transition:opacity .7s ease,transform .7s ease; }
       .reveal.visible { opacity:1; transform:none; }
       @media(prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *,*::before,*::after{transition-duration:.01ms!important}.reveal{opacity:1;transform:none} }
-      @media(max-width:760px){ .page{width:min(100% - 22px,1500px)}.nav{min-height:58px}.nav-links{gap:17px}.masthead{padding-top:42px}h1{font-size:clamp(4rem,20vw,7.2rem);line-height:.82}.intro,.section-head,.about{grid-template-columns:1fr}.intro{gap:24px}.section-head{gap:20px}.entry{grid-template-columns:1fr;gap:10px}.entry p{margin-top:5px}.about{gap:28px}.about-copy{align-self:start} }
+      @media(max-width:760px){ .page{width:min(100% - 22px,1500px)}.nav{min-height:58px}.nav-links{gap:17px}.masthead{padding-top:42px}h1{font-size:clamp(4rem,20vw,7.2rem);line-height:.82}.intro,.about{grid-template-columns:1fr}.intro{gap:24px}.entry{grid-template-columns:1fr;gap:10px}.entry p{margin-top:5px}.about{gap:28px}.about-copy{align-self:start} }
     </style>
   </head>
   <body>
@@ -82,7 +81,7 @@
         </section>
 
         <section class="experience" id="experience">
-          <div class="section-head reveal"><h2>Experience</h2><p>A selected history across AI, electrical engineering, research, robotics, education, and creative work.</p></div>
+          <div class="section-head reveal"><h2>Experience</h2></div>
           <div class="timeline reveal" id="experience-timeline">
             <article class="entry"><time>June 2025—Now</time><h3>Respan<br />Head of DevRel</h3><p>LLM gateway, observability, and evals. YC W24.</p></article>
             <article class="entry"><time>June—December 2024</time><h3>Samsara<br />Electrical Engineering Co-op</h3><p>Worked on Samsara’s STCE team on its first-generation flat asset trackers, AT13 and TL11.</p></article>
