@@ -32,7 +32,6 @@
       .route-visual { height:clamp(210px,25vw,360px); margin-top:28px; overflow:hidden; background:#191919; }
       .route-visual img { transition:transform .8s cubic-bezier(.2,.7,.2,1); }
       .route:hover .route-visual img { transform:scale(1.018); }
-      .feature-visual { display:grid; place-items:center; border:1px solid var(--line); background:#d9d7d0; color:var(--ink); font:400 clamp(2.2rem,5vw,5.8rem)/1 Georgia,'Times New Roman',serif; letter-spacing:-.04em; }
       footer { display:flex; justify-content:space-between; gap:24px; padding:22px 0 28px; border-top:1px solid var(--line); color:var(--muted); font-size:.72rem; letter-spacing:.11em; text-transform:uppercase; }
       @media(max-width:760px){ .page{width:min(100% - 22px,1500px)} nav{min-height:58px}.nav-links{gap:16px}.nav-links a:first-child{display:none} header{grid-template-columns:1fr;padding-top:48px} h1{font-size:clamp(4.4rem,23vw,8rem)} .routes{grid-template-columns:1fr}.route{min-height:520px;padding-left:0!important;padding-right:0!important;border-right:0!important;border-bottom:1px solid var(--line)}.route:last-child{border-bottom:0}.route h2{font-size:clamp(4rem,18vw,6.5rem)} }
     </style>
@@ -52,7 +51,7 @@
           <div class="route-meta"><span>01</span><span>Engineering · AI · Systems</span></div>
           <h2>Features</h2>
           <p>Selected work across engineering, AI, robotics, and developer tools.</p>
-          <div class="route-visual feature-visual" aria-hidden="true">04 features</div>
+          <div class="route-visual"><img src="images/feature-cover.jpg" alt="Sihan Chen standing before the mountains of Torres del Paine" /></div>
         </a>
         <a class="route" href="photographs/">
           <div class="route-meta"><span>02</span><span>Archive · 50 photographs</span></div>
