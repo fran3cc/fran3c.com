@@ -133,8 +133,7 @@
         align-items: end;
         margin-bottom: clamp(32px, 5vw, 70px);
       }
-      .gallery-head h2,
-      .about h2 {
+      .gallery-head h2 {
         margin: 0;
         font-family: Georgia, 'Times New Roman', serif;
         font-size: clamp(2.6rem, 5vw, 5.7rem);
@@ -199,17 +198,6 @@
         text-transform: uppercase;
       }
 
-      .about {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 34px;
-        padding: clamp(76px, 10vw, 150px) 0;
-        border-top: 1px solid var(--line);
-      }
-      .about-body { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-      .about-body p { margin: 0; max-width: 36ch; font-size: 1.05rem; }
-      .about-body p:last-child { color: var(--muted); }
-
       footer {
         display: flex;
         justify-content: space-between;
@@ -268,14 +256,13 @@
         h1 { font-size: clamp(4rem, 20vw, 7.2rem); line-height: 0.82; }
         .hero { aspect-ratio: 4 / 5; }
         .hero img { object-position: 50% 50%; }
-        .intro, .gallery-head, .about { grid-template-columns: 1fr; }
+        .intro, .gallery-head { grid-template-columns: 1fr; }
         .intro { gap: 24px; }
         .intro-note { justify-self: start; }
         .gallery-head { gap: 20px; }
         .photo-grid { grid-template-columns: 1fr 1fr; gap: 48px 12px; }
         .photo:nth-child(n) { grid-column: auto; margin-top: 0; }
         .photo:nth-child(1), .photo:nth-child(4), .photo:nth-child(7) { grid-column: 1 / -1; }
-        .about-body { grid-template-columns: 1fr; gap: 24px; }
         footer { align-items: flex-end; }
       }
     </style>
@@ -287,7 +274,6 @@
         <div class="nav-links">
           <a href="../features/">Features</a>
           <a href="#top">Photographs</a>
-          <a href="#about">About</a>
           <a href="archive/">All 50</a>
         </div>
       </nav>
@@ -364,16 +350,6 @@
           </div>
         </section>
 
-        <section class="about reveal" id="about">
-          <p class="section-label">About this index</p>
-          <div class="about-body">
-            <h2>More than<br />a gallery.</h2>
-            <div>
-              <p>A home for photographs, notes, small experiments, and the work that does not fit neatly anywhere else.</p>
-              <p style="margin-top: 24px;">The structure is intentionally open: future entries can become essays, projects, or new visual stories without turning the whole site into a photo portfolio.</p>
-            </div>
-          </div>
-        </section>
       </main>
 
       <footer><span>Photographs / 2026</span><span>50 images in the archive</span></footer>
